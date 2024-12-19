@@ -1,224 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- [Previous head section remains the same] -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Watling - Founding CTO at EarlyDay</title>
-    <link rel="stylesheet" href="style.css">
+    <title>James Watling - Engineering Manager at Wonderschool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <style>
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 40px;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-}
-
-.container {
-    max-width: 800px;
-    margin: auto;
-    background: #fff;
-    padding: 20px;
-}
-
-h1, h2 {
-    color: #333;
-}
-
-h1 {
-    margin-top: 0;
-}
-
-h2 {
-    font-weight: normal;
-    font-size: 1.4em;
-    /* Additional styling for prominence */
-    border-bottom: 1px solid #333; /* Adds a subtle line under the heading for emphasis */
-    padding-bottom: 5px; /* Adds a little space under the text, above the line */
-    margin-bottom: 20px; /* Increases space below the heading for separation */
-}
-
-p, .experience p, .education p {
-    margin: 10px 0;
-}
-
-.section {
-    margin-bottom: 40px;
-}
-
-.experience h3, .education h3 {
-    margin-top: 10px;
-    margin-bottom: 0;
-}
-
-.experience p:first-of-type, .education p:first-of-type {
-    margin-top: 0;
-}
-
-img {
-    max-width: 120px;
-    border-radius: 50%;
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 20px;
-    }
-
-    img {
-        max-width: 100px;
-        float: none;
-        display: block;
-        margin: 0 auto 20px;
-    }
-
-    h2 {
-        /* Responsive adjustment for headings */
-        font-size: 1.5em; /* Makes the heading larger on smaller screens */
-    }
-}
-
-
+        .animate-slide-up {
+            animation: slideUp 0.5s ease-out;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .skill-tag {
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+        }
     </style>
 </head>
-<body>
-    <div class="container">
-        <header class="section">
-            <h1>James Watling</h1>
-        </header>
+<body class="bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <!-- Left Column -->
+            <div class="md:col-span-1">
+                <div data-aos="fade-right">
+                    <img src="/profile.jpeg" alt="James Watling" class="rounded-full w-48 h-48 object-cover mx-auto mb-6 shadow-lg"/>
+                    <div class="text-center mb-8">
+                        <h1 class="text-2xl font-bold text-gray-900 mb-2">James Watling</h1>
+                        <h2 class="text-lg font-medium text-gray-600">
+                            Engineering Manager at Wonderschool
+                        </h2>
+                    </div>
+                </div>
 
-        <section class="section">
-            <img src="profile.jpeg" />
-            <p>Hello! I'm James, a seasoned technology leader with a robust track record in pioneering startups and driving them towards operational excellence, he brings a wealth of experience in technical innovation, strategic leadership, and team building. His career highlights include his foundational role as the first employee and CTO at EarlyDay, where he led product development and team growth, alongside strategic contributions to KarmaCheck, Hub Token, and GuavaPass, including significant fundraising successes and the development of cutting-edge technology platforms.
-            </p>
-            <p>
-              With over 12 years as a full stack developer, he has a deep understanding of modern technology stacks and software development practices. His expertise extends across Ruby on Rails, React, and React Native, coupled with a strong proficiency in DevOps practices, including extensive experience with AWS to facilitate agile development and deployment processes.
-            </p>
-            <p>
+                <!-- Enhanced Skills Section -->
+                <div class="mt-8 bg-white rounded-lg shadow-sm p-6" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="font-semibold text-gray-900 mb-4">Core Competencies</h3>
 
-As a founding CTO and senior technology leader, he has a proven track record of driving product innovation, leading high-performing teams, and executing strategic initiatives. His achievements, such as securing over $4 million in funding at EarlyDay and contributing to a $20 million token sale at Hub Token, underscore his ability to blend technical expertise with strategic business acumen.
-</p>
-<p>
+                    <!-- Leadership Skills -->
+                    <h4 class="text-sm font-medium text-gray-700 mb-2">Leadership</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Strategic Leadership</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Team Building</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Product Strategy</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Startup Scaling</span>
+                        <span class="skill-tag bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">M&A Experience</span>
+                    </div>
 
-His leadership goes beyond technical direction to include comprehensive team building and management, having assembled and nurtured teams that are technically proficient and highly motivated. This experience, along with his hands-on technical skills and strategic contributions, positions him as a valuable asset to startups and established companies alike, passionate about leveraging his extensive technical background and leadership abilities to help organizations achieve their strategic growth objectives.
-</p>
+                    <!-- Technical Skills -->
+                    <h4 class="text-sm font-medium text-gray-700 mb-2">Technical</h4>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Ruby on Rails</span>
+                        <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">React/React Native</span>
+                        <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Next.js</span>
+                        <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">GraphQL</span>
+                        <span class="skill-tag bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">AWS/GCP</span>
+                    </div>
 
+                    <!-- Process Skills -->
+                    <h4 class="text-sm font-medium text-gray-700 mb-2">Process</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Agile/Scrum</span>
+                        <span class="skill-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">DevOps</span>
+                        <span class="skill-tag bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">CI/CD</span>
+                    </div>
+                </div>
 
-        </section>
+                <!-- Add after Core Competencies and before Contact section -->
+                <div class="mt-8 bg-white rounded-lg shadow-sm p-6" data-aos="fade-right" data-aos-delay="150">
+                    <h3 class="font-semibold text-gray-900 mb-4">Open To</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span>Fractional CTO Roles</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                            <span>Technical Due Diligence for Acquisitions</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                            <a href="https://techtalentvet.com/" class="hover:text-blue-600 transition-colors">
+                                Technical Hiring Consulting
+                                <span class="text-sm text-gray-500 ml-2">(via Tech Talent Vet)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-        <section class="section">
-          <h2>Services</h2>
-          <p>I specialize in helping startups to hire the best in tech talent, providing a crucial bridge between technical requirements and company vision. Through <a href="https://techtalentvet.com/" target="_blank">TechTalentVet</a>, we offer peace of mind by rigorously assessing developer skills to ensure only top-notch professionals join your team. Our process is designed to translate the intricate language of code into tangible results for your business, making your hiring process as seamless and effective as possible.</p>
-          <p>In addition to talent acquisition, I serve as an advisor to boards, offering strategic insights and guidance to navigate the complex tech landscape. My services also extend to acting as a fractional CTO, where I provide leadership and technical direction to startups looking to scale or refine their technology strategy without the need for a full-time executive, allowing for flexibility and expertise on demand.</p>
-      </section>
-
-        <section class="section">
-            <h2>Experience</h2>
-            <div class="experience">
-                <h3><a href="https://earlyday.com" target="_blank">EarlyDay</a> - Founding CTO</h3>
-                <p>Spearheaded the technical/product launch strategy as the inaugural employee, laying the foundational technology and vision for the company.
-
-                  As the founding CTO, I was instrumental in hiring and leading a highly satisfied team of six, crafting the initial product from scratch and scaling the team to foster innovation.
-                </p>
-              <p>
-                  Played a pivotal role in securing over $4 million in funding through strategic presentations to the board, co-leading product development, data analytics, and much more.
-                </p>
-              <p>
-                  Established and managed a fully remote team across Latin America and a wider distributed team in the US, successfully launching our services in three major US metro areas..</p>
-                </p>
-                  <h3><a href="https://hubtoken.org" target="_blank">Hub</a> - Senior Software Engineer</h3>
-                <p>Mountain View, CA</p>
-                <p>Collaborated closely with Eric Ly, co-founder of LinkedIn, in a venture aimed at revolutionizing social media through a trust-based international platform.
-                </p>
-                  Contributed to a landmark $20 million token sale, underscoring the project's innovative approach to integrating gamification with reputation-based feeds to foster genuine interactions.
-                <p>
-                  Responsible for developing applications for the Human Trust Protocol utilising blockchain to provide users a standardised way for building their reputation.
-                </p>
-              <p>
-                  Building the Ruby on Rails application to support the Hub web and iOS Apps
-                </p>
-                  <h3><a href="https://karmacheck.com" target="_blank">KarmaCheck</a> - Senior Software Engineer & Board Advisor</h3>
-
-                <p>Mountain View, CA</p>
-                <p>
-                  Initiated and developed the MVP as one of the first two developers at this Hub sister company, setting a robust foundation for the product's future development.
-                </p>
-              <p>
-Contributed to a successful $15 million Series A funding round, leveraging my technical expertise and strategic insights to guide the company's direction.
-
-Returned to Hub with enhanced skills and experience, continuing to advise the board and influence product strategy.
-                </p>
-                <h3><a href="https://classpass.com/press-room/newsroom/classpass-acquisition-of-guavapass/" target="_blank">GuavaPass</a> - Senior Developer Team Lead</h3>
-            <p>Singapore</p>
-
-                <p>Acquired by ClassPass. Was involved in DD and parts of the M&A process but decided not to join ClassPass post acquisition</p>
-
-              <p>Working with business and technology teams to build and deliver business goals in a timely and measurable way. Helping to develop the product roadmap, estimate deadlines/complexity, gather business requirements, turn business goals into actionable developer ready stories, manage business expectations and much more.
-            </p>
-            </p>Responsible for a team of 5, helping to manage their career objectives, day to day operations, performance reviews, regular one on one catch ups and more </p>
-          </p>
-                  <h3><a href="https://www.crunchbase.com/organization/roomorama" target="_blank">Roomorama</a> - Senior Rails Developer</h3>
-                  <p>Singapore</p>
-                  <p>Working at Roomorama exposed me to supporting a website catering to millions of monthly visitors as part of a small team of talented developers. Both the development and wider company consisted of talented people from numerous countries all bringing a unique perspective to the team.
-
-                    Roomorama has a strong scrum focus, with a few customisations with the main focus on delivering clean, well tested/documented code.
-
-                    Some responsibilities included working on building integrations with 3rd party providers to import 10,000s of properties into the Roomorama system, whilst keeping them continuously updated. This included live price and availability integration using various API technologies.
-
-                    Also working on the main website itself to manage the implementation of new features, bug fixes, increasing test coverage, refactoring legacy code and other standard software practices
-                    </p>
+                <!-- New Contact Section -->
+                <div class="mt-8 bg-white rounded-lg shadow-sm p-6" data-aos="fade-right" data-aos-delay="200">
+                    <h3 class="font-semibold text-gray-900 mb-4">Contact</h3>
+                    <p class="text-gray-600 mb-4">Interested in discussing technology, development, or potential collaborations?</p>
+                    <div class="space-y-3">
+                        <a href="https://www.linkedin.com/in/team-lead" class="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://calendly.com/tech-talent-vet/30min?month=2024-01" class="flex items-center space-x-3 text-gray-700 hover:text-green-600 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span>Calendly</span>
+                        </a>
+                        <a href="https://github.com/JamesWatling" class="flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span>Github</span>
+                        </a>
+                        <a href="https://www.jameswatling.com/now" class="flex items-center space-x-3 text-gray-700 hover:text-purple-600 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            <span>What I'm doing now</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </section>
 
-        <section class="section">
-          <h2>Awards</h2>
-          <p>Examples of awards and recognition for my work include:</p>
-            <ul>
-              <li>
-                <a href="https://www.ceo-review.com/winners/earlyday/">Best Early Childhood Educators Recruitment Platform CTO</a>
-              </li>
-              <li>
-                <a href="https://bowerycap.com/blog/insights/from-the-front-lines-melissa-tran-earlyday">Article about launching marketplace by EarlyDay co-founder</a>
-              </li>
-          </p>
-      </section>
+            <!-- Right Column -->
+            <div class="md:col-span-2">
+                <!-- Executive Summary Section -->
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-8" data-aos="fade-up">
+                    <h2 class="text-2xl font-semibold text-gray-900 mb-6">Executive Summary</h2>
+                    <div class="space-y-4 text-gray-700">
+                        <p class="leading-relaxed">
+                            A seasoned technology leader with over 12 years of experience, specializing in startup growth and technical innovation. Currently leading provider experience transformation at Wonderschool following a successful acquisition of EarlyDay, where as Founding CTO, secured over $4M in funding and built a high-performing remote team.
+                        </p>
+                        <p class="leading-relaxed">
+                            Proven track record in strategic leadership, having contributed to multiple successful exits and fundraising rounds totaling over $39M across EarlyDay, Hub Token ($20M), and KarmaCheck ($15M). Deep expertise in modern technology stacks including Ruby on Rails, React, and cloud infrastructure.
+                        </p>
+                        <p class="leading-relaxed">
+                            Passionate about leveraging AI and emerging technologies to solve complex business challenges, with recent focus on integrating Large Language Models and AI agents into production environments.
+                        </p>
+                    </div>
+                </div>
 
-        <section class="section">
-            <h2>Contact</h2>
-            <p>Interested in discussing technology, development, or potential collaborations?
-              Reach out on
-              <ul>
-                <li>
-                  <a href="https://www.linkedin.com/in/team-lead">LinkedIn</a>
-                </li>
-                <li>
-                  <a href="https://calendly.com/tech-talent-vet/30min?month=2024-01">Calendly</a>
-                </li>
-                <li>
-                  <a href="https://github.com/JamesWatling">Github</a>
-                </li>
-                <li>
-                  <a href="https://www.jameswatling.com/now">What I'm doing now</a>
-                </li>
-            </p>
-        </section>
+                <!-- Experience Timeline Section -->
+                <div class="bg-white rounded-lg shadow-sm p-6" data-aos="fade-up">
+                  <h2 class="text-2xl font-semibold text-gray-900 mb-6">Experience Timeline</h2>
+                  <div class="relative space-y-8">
+                      <!-- Center line through dots -->
+                      <div class="absolute left-[8px] top-2 bottom-2 w-0.5 bg-blue-200"></div>
+
+                      <!-- 1. Engineering Manager - Wonderschool -->
+                      <div class="relative pl-8">
+                          <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-0 top-0 z-10"></div>
+                          <h3 class="font-semibold">Engineering Manager (Provider Experience) - <a href="https://wonderschool.com" class="text-blue-600 hover:text-blue-800 hover:underline">Wonderschool</a></h3>
+                          <p class="text-gray-600 text-sm">February 2024 - Present</p>
+                          <div class="mt-2">
+                              <ul class="list-disc ml-4 space-y-2 text-gray-700">
+                                  <li>Leading technical integration and team alignment post-EarlyDay acquisition</li>
+                                  <li>Managing multiple product teams (14 engineers) across distributed tech stacks</li>
+                                  <li>Spearheading AI initiatives to enhance provider experience and operational efficiency</li>
+                                  <li>Driving architectural decisions for platform consolidation</li>
+                              </ul>
+                              <div class="flex flex-wrap gap-2 mt-3">
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Team Leadership</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Product Strategy</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Rails</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Next.js</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">GCP</span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- 2. Founding CTO - EarlyDay -->
+                      <div class="relative pl-8">
+                          <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-0 top-0 z-10"></div>
+                          <div class="flex items-center gap-2">
+                              <h3 class="font-semibold">Founding CTO - <a href="https://earlyday.com" class="text-blue-600 hover:text-blue-800 hover:underline">EarlyDay</a></h3>
+                              <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Acquired by Wonderschool</span>
+                          </div>
+                          <p class="text-gray-600 text-sm">February 2022 - February 2024</p>
+                          <div class="mt-2">
+                              <ul class="list-disc ml-4 space-y-2 text-gray-700">
+                                  <li>First employee and technical founder, securing $4M+ in funding</li>
+                                  <li>Built and led remote engineering team across US and LatAm</li>
+                                  <li>Architected scalable platform serving multiple US metro areas</li>
+                                  <li>Established engineering practices and technical vision</li>
+                                  <li>Led technical due diligence during acquisition process</li>
+                              </ul>
+                              <div class="flex flex-wrap gap-2 mt-3">
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Technical Leadership</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Fundraising</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">M&A</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Rails</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">React</span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- 3. Senior Software Engineer - Hub -->
+                      <div class="relative pl-8">
+                          <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-0 top-0 z-10"></div>
+                          <h3 class="font-semibold">Senior Software Engineer - <a href="https://hubtoken.org" class="text-blue-600 hover:text-blue-800 hover:underline">Hub</a></h3>
+                          <p class="text-gray-600 text-sm">December 2018 - February 2022</p>
+                          <div class="mt-2">
+                              <ul class="list-disc ml-4 space-y-2 text-gray-700">
+                                  <li>Collaborated with LinkedIn co-founder Eric Ly on revolutionary blockchain-based trust protocol</li>
+                                  <li>Key contributor to successful $20M token sale through technical leadership and presentations</li>
+                                  <li>Architected and developed core platform features using Ruby on Rails and React Native</li>
+                                  <li>Led implementation of blockchain integration for reputation management system</li>
+                                  <li>Mentored junior developers and established coding standards</li>
+                              </ul>
+                              <div class="flex flex-wrap gap-2 mt-3">
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Blockchain</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Rails</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">React Native</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Token Sale</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Technical Leadership</span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- 4. Senior Front End Developer - KarmaCheck (during Hub period) -->
+                      <div class="relative pl-8">
+                          <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-0 top-0 z-10"></div>
+                          <div class="flex items-center gap-2">
+                              <h3 class="font-semibold">Senior Front End Developer - <a href="https://karmacheck.com" class="text-blue-600 hover:text-blue-800 hover:underline">KarmaCheck</a></h3>
+                              <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">$15M Series A</span>
+                          </div>
+                          <p class="text-gray-600 text-sm">November 2019 - March 2020</p>
+                          <div class="mt-2">
+                              <ul class="list-disc ml-4 space-y-2 text-gray-700">
+                                  <li>One of first two developers building MVP for Hub sister company</li>
+                                  <li>Contributed to successful $15M Series A funding round</li>
+                                  <li>Set foundation for product architecture and development practices</li>
+                                  <li>Continued as board advisor after returning to Hub</li>
+                              </ul>
+                              <div class="flex flex-wrap gap-2 mt-3">
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Frontend Development</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">MVP Development</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Fundraising</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Advisory</span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- 5. Team Lead - GuavaPass -->
+                      <div class="relative pl-8">
+                          <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-0 top-0 z-10"></div>
+                          <div class="flex items-center gap-2">
+                              <h3 class="font-semibold">Team Lead - <a href="https://www.crunchbase.com/organization/guavapass" class="text-blue-600 hover:text-blue-800 hover:underline">GuavaPass</a></h3>
+                              <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Acquired by ClassPass</span>
+                          </div>
+                          <p class="text-gray-600 text-sm">November 2016 - December 2018</p>
+                          <div class="mt-2">
+                              <ul class="list-disc ml-4 space-y-2 text-gray-700">
+                                  <li>Led 5-person development team through successful acquisition by ClassPass</li>
+                                  <li>Managed product roadmap and technical architecture for fitness marketplace platform</li>
+                                  <li>Implemented agile methodologies and DevOps practices improving deployment frequency by 300%</li>
+                                  <li>Conducted technical due diligence during M&A process</li>
+                                  <li>Mentored team members through career development and technical growth</li>
+                              </ul>
+                              <div class="flex flex-wrap gap-2 mt-3">
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Team Leadership</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Rails</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">React Native</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">AWS</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">M&A</span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- 6. Senior Ruby on Rails Developer - Roomorama -->
+                      <div class="relative pl-8">
+                          <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-0 top-0 z-10"></div>
+                          <h3 class="font-semibold">Senior Ruby on Rails Developer - <a href="https://www.crunchbase.com/organization/roomorama" class="text-blue-600 hover:text-blue-800 hover:underline">Roomorama</a></h3>
+                          <p class="text-gray-600 text-sm">September 2014 - October 2015</p>
+                          <div class="mt-2">
+                              <ul class="list-disc ml-4 space-y-2 text-gray-700">
+                                  <li>Developed and maintained high-scale property listing platform serving millions of monthly visitors</li>
+                                  <li>Built robust integrations handling 100,000+ property listings with real-time pricing</li>
+                                  <li>Improved platform performance and reduced response times by 40%</li>
+                                  <li>Implemented comprehensive test coverage and documentation standards</li>
+                                  <li>Collaborated with international team using agile methodologies</li>
+                              </ul>
+                              <div class="flex flex-wrap gap-2 mt-3">
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Rails</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">API Integration</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">High Scale</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Performance</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Testing</span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- 7. Web Developer - Catch Design -->
+                      <div class="relative pl-8">
+                          <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-0 top-0 z-10"></div>
+                          <h3 class="font-semibold">Web Developer - Catch Design</h3>
+                          <p class="text-gray-600 text-sm">September 2013 - October 2014</p>
+                          <div class="mt-2">
+                              <ul class="list-disc ml-4 space-y-2 text-gray-700">
+                                  <li>Developed solutions for major NZ companies including KiwiRail and 2degrees</li>
+                                  <li>Implemented backend systems and third-party integrations</li>
+                                  <li>Built customer communication management system for 2degrees business customers</li>
+                                  <li>Integrated ElasticSearch and designed mock backend systems</li>
+                              </ul>
+                              <div class="flex flex-wrap gap-2 mt-3">
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Rails</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">ElasticSearch</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">System Integration</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Backend Development</span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- 8. Managing Director - Consilio -->
+                      <div class="relative pl-8">
+                          <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-0 top-0 z-10"></div>
+                          <h3 class="font-semibold">Managing Director - Consilio</h3>
+                          <p class="text-gray-600 text-sm">January 2013 - October 2014</p>
+                          <div class="mt-2">
+                              <ul class="list-disc ml-4 space-y-2 text-gray-700">
+                                  <li>Provided Rails consulting services for small/medium businesses in Wellington region</li>
+                                  <li>Led requirements analysis, system design and development</li>
+                                  <li>Managed client relationships and project delivery</li>
+                              </ul>
+                              <div class="flex flex-wrap gap-2 mt-3">
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Rails</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">PostgreSQL</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Redis</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Consulting</span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- 9. Technology Director - Tendersave -->
+                      <div class="relative pl-8">
+                          <div class="absolute w-4 h-4 bg-blue-500 rounded-full left-0 top-0 z-10"></div>
+                          <h3 class="font-semibold">Technology Director - Tendersave</h3>
+                          <p class="text-gray-600 text-sm">September 2012 - January 2014</p>
+                          <div class="mt-2">
+                              <ul class="list-disc ml-4 space-y-2 text-gray-700">
+                                  <li>Led team of 4 developers building tender management platform</li>
+                                  <li>Served as director aligning business goals with technical direction</li>
+                                  <li>Managed full project lifecycle from conception to deployment</li>
+                              </ul>
+                              <div class="flex flex-wrap gap-2 mt-3">
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Technical Leadership</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Rails</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">jQuery</span>
+                                  <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">Project Management</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+        <div class="mb-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 shadow-sm" data-aos="fade-up">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">What I'm Working On Now</h2>
+          <div class="grid md:grid-cols-2 gap-8">
+              <div class="space-y-4">
+                  <div class="flex items-start space-x-3">
+                      <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-500 animate-pulse">
+                          <span class="text-sm">→</span>
+                      </div>
+                      <div>
+                          <h3 class="font-semibold mb-2">AI Integration at Wonderschool</h3>
+                          <p class="text-gray-600">Leveraging OpenAI/Claude to enhance product capabilities and user experience. Building AI-powered features to streamline early childhood education processes.</p>
+                      </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                      <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-purple-100 text-purple-500 animate-pulse">
+                          <span class="text-sm">→</span>
+                      </div>
+                      <div>
+                          <h3 class="font-semibold mb-2">AI Development Tools Exploration</h3>
+                          <p class="text-gray-600">Experimenting with cutting-edge AI tools including Cursor editor and Devin AI agents to enhance development workflows.</p>
+                      </div>
+                  </div>
+                  <div class="flex items-start space-x-3">
+                      <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-green-100 text-green-500 animate-pulse">
+                          <span class="text-sm">→</span>
+                      </div>
+                      <div>
+                          <h3 class="font-semibold mb-2">Agentic AI Research</h3>
+                          <p class="text-gray-600">Building and experimenting with agentic AI systems to understand their potential in software development and automation.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="bg-white rounded-lg p-6 shadow-sm">
+                  <h3 class="font-semibold mb-4">Current Tech Stack & Tools</h3>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">OpenAI GPT-4</span>
+                      <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Claude</span>
+                      <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Cursor.sh</span>
+                      <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Devin AI</span>
+                      <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">AI Agents</span>
+                      <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Ruby on Rails</span>
+                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GCP</span>
+                      <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">AWS</span>
+                      <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Ruby</span>
+                      <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">Rails</span>
+                      <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
+                      <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                      <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Nest</span>
+                      <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">GraphQL</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+        <!-- Services Section remains the same -->
     </div>
+
+    <div class="text-center pb-8">
+      <a href="/old.html" class="text-gray-300 hover:text-gray-400 text-sm opacity-50 transition-opacity hover:opacity-75">
+          old portfolio website
+      </a>
+  </div>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-62029447-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-62029447-1');
-</script>
 </html>
-
