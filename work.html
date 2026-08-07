@@ -4,98 +4,364 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>James Watling - Work | Selected Projects</title>
-    <meta name="description" content="Selected client work and projects by James Watling — websites, AI systems, and products built through Haestus.">
+    <meta name="description" content="Selected client work by James Watling — websites, AI systems, and products designed, built, and shipped through Haestus.">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://www.jameswatling.com/work">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
     <style>
+:root {
+    --paper: #f6f7f9;
+    --card: #ffffff;
+    --ink: #14161a;
+    --slate: #5c6470;
+    --line: #e3e6eb;
+    --cobalt: #2646f5;
+    --live: #16a34a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 40px;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Public Sans', system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
 }
 
-.container {
-    max-width: 800px;
-    margin: auto;
-    background: #fff;
-    padding: 20px;
+a { color: inherit; }
+
+.wrap {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-h1, h2 {
-    color: #333;
+/* ── Header ─────────────────────────── */
+.site-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
 }
 
-h1 {
-    margin-top: 0;
+.site-header .name {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    text-decoration: none;
 }
 
-h2 {
-    font-weight: normal;
-    font-size: 1.4em;
-    border-bottom: 1px solid #333;
-    padding-bottom: 5px;
+.site-header .name:hover { color: var(--cobalt); }
+
+.site-header .crumb {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--slate);
+}
+
+.site-header .crumb strong {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+/* ── Hero ───────────────────────────── */
+.hero { padding: 88px 0 72px; }
+
+.hero .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cobalt);
     margin-bottom: 20px;
 }
 
-p {
-    margin: 10px 0;
+.hero h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 7vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    max-width: 14ch;
 }
 
-.section {
-    margin-bottom: 40px;
+.hero h1 em {
+    font-style: normal;
+    color: var(--cobalt);
 }
 
-.project h3 {
-    margin-top: 10px;
-    margin-bottom: 0;
+.hero p {
+    margin-top: 24px;
+    max-width: 52ch;
+    color: var(--slate);
+    font-size: 1.05rem;
 }
 
-.project img {
+/* ── Project entry ──────────────────── */
+.log-rule {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--slate);
+    margin-bottom: 28px;
+}
+
+.log-rule::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
+
+.project {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 48px;
+    align-items: start;
+    padding-bottom: 96px;
+}
+
+/* Browser-chrome frame — the signature */
+.browser {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(20, 22, 26, 0.05), 0 12px 32px -12px rgba(20, 22, 26, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+a.browser:hover,
+a.browser:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 2px 4px rgba(20, 22, 26, 0.05), 0 24px 48px -16px rgba(38, 70, 245, 0.28);
+}
+
+.browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+    background: #fbfbfc;
+}
+
+.browser-bar .dots { display: flex; gap: 6px; }
+
+.browser-bar .dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--line);
+}
+
+.browser-bar .url {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--slate);
+    background: var(--paper);
+    border-radius: 6px;
+    padding: 3px 12px;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.browser img {
+    display: block;
+    width: 100%;
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 15px 0;
-    border: 1px solid #ddd;
 }
 
-a:hover {
-    text-decoration: underline;
+/* Project details */
+.details h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600;
+    font-size: 1.9rem;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 20px;
-    }
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--live);
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    padding: 3px 11px;
+}
+
+.badge::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+}
+
+.meta {
+    margin: 24px 0;
+    border-top: 1px solid var(--line);
+}
+
+.meta div {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.88rem;
+}
+
+.meta dt {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--slate);
+}
+
+.meta dd { text-align: right; font-weight: 500; }
+
+.details p { color: var(--slate); font-size: 0.98rem; }
+
+.details p + p { margin-top: 14px; }
+
+.visit {
+    display: inline-block;
+    margin-top: 28px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--cobalt);
+    text-decoration: none;
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 2px;
+}
+
+.visit:hover { color: var(--ink); }
+
+/* ── Footer ─────────────────────────── */
+.site-footer {
+    border-top: 1px solid var(--line);
+    padding: 36px 0 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.site-footer p { color: var(--slate); font-size: 0.92rem; }
+
+.site-footer a { color: var(--ink); font-weight: 500; }
+
+.site-footer a:hover { color: var(--cobalt); }
+
+.site-footer .stamp {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--slate);
+}
+
+:focus-visible {
+    outline: 2px solid var(--cobalt);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .browser, .badge::before { transition: none; animation: none; }
+    a.browser:hover { transform: none; }
+}
+
+@media (max-width: 860px) {
+    .project { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+    .hero { padding: 64px 0 56px; }
+    .meta dd { text-align: left; }
+    .meta div { flex-direction: column; gap: 2px; }
 }
     </style>
-
-    <link rel="canonical" href="https://www.jameswatling.com/work">
 </head>
 <body>
-    <div class="container">
-        <header class="section">
-            <h1>James Watling</h1>
+    <div class="wrap">
+        <header class="site-header">
+            <a class="name" href="/">James Watling</a>
+            <span class="crumb">~/<strong>work</strong></span>
         </header>
 
-        <section class="section">
-            <h2>Work</h2>
-            <p>A selection of recent client work and projects.</p>
+        <section class="hero">
+            <p class="eyebrow">Client work · Built through Haestus</p>
+            <h1>Work that <em>shipped.</em></h1>
+            <p>Websites, AI systems, and products I've designed and built for clients — live in production, not in a slide deck.</p>
         </section>
 
-        <section class="section project">
-            <h3><a href="https://www.hartmanretirement.com/">Hartman Retirement Partners</a></h3>
-            <a href="https://www.hartmanretirement.com/">
-                <img src="hartman-retirement-og.png" alt="Hartman Retirement Partners — independent fiduciary retirement planning in St. George, Utah">
+        <p class="log-rule">SHIPPED · 2026</p>
+
+        <article class="project">
+            <a class="browser" href="https://www.hartmanretirement.com/?utm_source=jameswatling.com&amp;utm_medium=referral&amp;utm_campaign=work" aria-label="Visit Hartman Retirement Partners">
+                <span class="browser-bar" aria-hidden="true">
+                    <span class="dots"><span></span><span></span><span></span></span>
+                    <span class="url">hartmanretirement.com</span>
+                </span>
+                <img src="hartman-retirement-home.jpg" alt="Screenshot of the Hartman Retirement Partners homepage — headline reading 'Protect what you've built. Grow it at a pace that lets you sleep at night.'" width="1440" height="960">
             </a>
-            <p>Hartman Retirement Partners is an independent, fiduciary retirement planning firm based in St. George, Utah, serving clients nationwide. Their focus is helping pre-retirees and retirees protect what they've built and grow it at a pace that lets them sleep at night — retirement income planning, Social Security optimization, tax planning, and wealth preservation, with transparent fees and no product sales.</p>
-            <p><a href="https://www.hartmanretirement.com/">Visit hartmanretirement.com &rarr;</a></p>
-        </section>
+
+            <div class="details">
+                <h2>Hartman Retirement Partners <span class="badge">Live</span></h2>
+
+                <dl class="meta">
+                    <div><dt>Role</dt><dd>Design, build &amp; launch</dd></div>
+                    <div><dt>Sector</dt><dd>Retirement planning</dd></div>
+                    <div><dt>Location</dt><dd>St. George, Utah</dd></div>
+                    <div><dt>Year</dt><dd>2026</dd></div>
+                </dl>
+
+                <p>Hartman Retirement Partners is an independent, fiduciary retirement planning firm serving pre-retirees and retirees nationwide — retirement income, Social Security optimization, tax planning, and wealth preservation, with transparent fees and no product sales.</p>
+                <p>The site carries their promise — "protect what you've built, grow it at a pace that lets you sleep at night" — through a calm, credible design built to turn visitors into scheduled consultations.</p>
+
+                <a class="visit" href="https://www.hartmanretirement.com/?utm_source=jameswatling.com&amp;utm_medium=referral&amp;utm_campaign=work">Visit hartmanretirement.com &rarr;</a>
+            </div>
+        </article>
+
+        <footer class="site-footer">
+            <p>Have a project in mind? <a href="https://calendly.com/watling-james/30min">Book a call</a> or find me on <a href="https://www.linkedin.com/in/team-lead">LinkedIn</a>.</p>
+            <p class="stamp">jameswatling.com/work</p>
+        </footer>
     </div>
-</body>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0LBERR565J"></script>
 <script>
@@ -105,4 +371,5 @@ a:hover {
 
   gtag('config', 'G-0LBERR565J');
 </script>
+</body>
 </html>
