@@ -1,0 +1,155 @@
+{
+  "_note": "Shared answer library. A company page lists the ids it shows. Set video to an MP4 URL (e.g. on R2) once recorded; until then the player runs in placeholder mode. Replace outline lines with Whisper transcript segments [seconds, text].",
+  "questions": {
+    "startup-em": {
+      "title": "How do you thrive in a startup environment? How do you need to adapt as an EM to be effective at a startup?",
+      "short": "Thriving at a startup",
+      "duration": 150,
+      "video": null,
+      "poster": null,
+      "transcriptStatus": "outline",
+      "lines": [
+        [
+          0,
+          "What a startup environment means to me, and why I do my best work in it"
+        ],
+        [
+          25,
+          "A concrete example: EarlyDay, from team of one to shipping weekly"
+        ],
+        [
+          60,
+          "How the EM role changes: hands on the code, closer to customers, fewer layers"
+        ],
+        [
+          95,
+          "What I deliberately stop doing compared with a larger company"
+        ],
+        [
+          125,
+          "Close: how I'd adapt specifically for your stage"
+        ]
+      ]
+    },
+    "team-relationship": {
+      "title": "Describe your most effective relationship with the team from a technical perspective. What role do you play? What are you accountable for and what is the team accountable for?",
+      "short": "My relationship with the team",
+      "duration": 160,
+      "video": null,
+      "poster": null,
+      "transcriptStatus": "outline",
+      "lines": [
+        [
+          0,
+          "The team I worked best with, and what made it work"
+        ],
+        [
+          30,
+          "The role I play technically: architecture partner, reviewer, unblocker"
+        ],
+        [
+          70,
+          "What I'm accountable for: direction, quality bar, delivery, people"
+        ],
+        [
+          105,
+          "What the team is accountable for: design decisions, estimates, owning production"
+        ],
+        [
+          135,
+          "Where the line moves as the team matures"
+        ]
+      ]
+    },
+    "execution-systems": {
+      "title": "What strategies, processes, and methodologies do you operationalize to get your teams to execute most effectively?",
+      "short": "How I get teams executing",
+      "duration": 150,
+      "video": null,
+      "poster": null,
+      "transcriptStatus": "outline",
+      "lines": [
+        [
+          0,
+          "My principle: the lightest process that keeps the team shipping"
+        ],
+        [
+          25,
+          "Planning: outcome-based goals, small batches, weekly priorities"
+        ],
+        [
+          60,
+          "Execution: design docs for big bets, trunk-based delivery, clear ownership"
+        ],
+        [
+          95,
+          "Feedback loops: metrics we actually watch, retros that change things"
+        ],
+        [
+          125,
+          "An example of a process I removed because it slowed us down"
+        ]
+      ]
+    },
+    "hiring-onboarding": {
+      "title": "Describe your experience with the end-to-end process of hiring and onboarding engineers. Where do you have experience being hands-on throughout this process?",
+      "short": "Hiring & onboarding",
+      "duration": 160,
+      "video": null,
+      "poster": null,
+      "transcriptStatus": "outline",
+      "lines": [
+        [
+          0,
+          "How many engineers I've hired, and at what stages"
+        ],
+        [
+          25,
+          "Sourcing and writing the role: where I'm hands on"
+        ],
+        [
+          55,
+          "Interview loop design, rubrics and calibrated debriefs"
+        ],
+        [
+          90,
+          "Closing candidates and selling the mission"
+        ],
+        [
+          120,
+          "Onboarding: first PR in week one, a 30/60/90 plan, a buddy"
+        ]
+      ]
+    },
+    "ai-philosophy": {
+      "title": "Describe your philosophy around, and experience with, AI technologies and tools. How have you personally leveraged these tools and what have you built? How have your teams used them?",
+      "short": "AI: philosophy & practice",
+      "duration": 180,
+      "video": null,
+      "poster": null,
+      "transcriptStatus": "outline",
+      "lines": [
+        [
+          0,
+          "My philosophy: AI as leverage for engineers, with evaluation before hype"
+        ],
+        [
+          35,
+          "What I've built personally: agentic pipelines, RAG, AI phone bots at Haestus"
+        ],
+        [
+          80,
+          "How my teams use it day to day: coding agents, review, testing, docs"
+        ],
+        [
+          120,
+          "Results: what got faster, and what we learned not to delegate"
+        ],
+        [
+          155,
+          "Where I think it's heading for engineering teams"
+        ]
+      ]
+    }
+  }
+}
