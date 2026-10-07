@@ -5,6 +5,11 @@
   const config = JSON.parse($("portal-config").textContent);
   const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  // Videos live on external storage; local previews read the edit folder instead.
+  const local = ["localhost", "127.0.0.1"].includes(location.hostname);
+  const mediaBase = local ? (config.localMediaBase || "/videos/edits/") : (config.mediaBase || "");
+  const mediaUrl = p => !p ? null : /^(https?:)?\/\//.test(p) || p.startsWith("/") ? p : mediaBase + p;
+  const label = i => Q[i].kind === "extra" ? Q[i].label : `Q${Q.slice(0, i + 1).filter(q => q.kind !== "extra").length}`;
 
   /* ── Owner mode: visit with ?me=1 once so your own views aren't tracked (?me=0 to undo) ── */
   const params = new URLSearchParams(location.search);
@@ -54,11 +59,11 @@
     $("rail").innerHTML = Q.map((q, i) => {
       const v = S.videos[q.id] || { maxPct: 0 };
       return `<button class="q" role="listitem" data-i="${i}" aria-current="${i === cur}">
-        <span class="n"><span>Q${i + 1} · ${fmt(q.duration)}</span>${v.maxPct >= 95 ? '<span class="w">✓ watched</span>' : ""}</span>
+        <span class="n"><span>${esc(label(i))} · ${fmt(q.duration)}</span>${v.maxPct >= 95 ? '<span class="w">✓ watched</span>' : ""}</span>
         <span class="tt">${esc(q.short)}</span><span class="prog"><i style="width:${v.maxPct}%"></i></span></button>`;
     }).join("");
     $("rail").querySelectorAll(".q").forEach(b => b.onclick = () => {
-      const i = +b.dataset.i; track("question_selected", { question: Q[i].id, index: i + 1 }, `Selected Q${i + 1}`); select(i, true);
+      const i = +b.dataset.i; track("question_selected", { question: Q[i].id, index: i + 1 }, `Selected ${label(i)}`); select(i, true);
     });
   }
   function renderTranscript() {
@@ -66,7 +71,7 @@
     $("tHead").textContent = q.transcriptStatus === "outline" ? "Outline · the full transcript follows the recording" : "Transcript · click a line to jump";
     $("tbody").innerHTML = q.lines.map(([s, txt]) => `<div class="line" data-s="${s}"><span class="ts">${fmt(s)}</span><span>${esc(txt)}</span></div>`).join("");
     $("tbody").querySelectorAll(".line").forEach(l => l.onclick = () => {
-      track("transcript_line_clicked", { question: q.id, at: +l.dataset.s }, `Q${cur + 1}: jumped to ${fmt(+l.dataset.s)} from the transcript`);
+      track("transcript_line_clicked", { question: q.id, at: +l.dataset.s }, `${label(cur)}: jumped to ${fmt(+l.dataset.s)} from the transcript`);
       media().currentTime = +l.dataset.s; if (media().paused) media().play();
     });
   }
@@ -96,10 +101,10 @@
   function bind(m) {
     const on = (ev, fn) => m.on ? m.on(ev, fn) : m.addEventListener(ev, fn);
     on("timeupdate", () => { const now = m.currentTime; if (!m.paused && now > lastTick && now - lastTick < 2) vstate(cur).watchedSec += now - lastTick; lastTick = now; update(); });
-    on("play", () => { const v = vstate(cur); v.plays++; setIcons(); track("video_played", { question: Q[cur].id, index: cur + 1, from: Math.round(m.currentTime), placeholder: !Q[cur].video }, `Q${cur + 1} "${Q[cur].short}": played${m.currentTime > 1 ? ` from ${fmt(m.currentTime)}` : ""}`); });
-    on("pause", () => { setIcons(); if (m.currentTime < (m.duration || Q[cur].duration)) track("video_paused", { question: Q[cur].id, at: Math.round(m.currentTime) }, `Q${cur + 1}: paused at ${fmt(m.currentTime)}`); });
+    on("play", () => { const v = vstate(cur); v.plays++; setIcons(); track("video_played", { question: Q[cur].id, index: cur + 1, from: Math.round(m.currentTime), placeholder: !Q[cur].video }, `${label(cur)} "${Q[cur].short}": played${m.currentTime > 1 ? ` from ${fmt(m.currentTime)}` : ""}`); });
+    on("pause", () => { setIcons(); if (m.currentTime < (m.duration || Q[cur].duration)) track("video_paused", { question: Q[cur].id, at: Math.round(m.currentTime) }, `${label(cur)}: paused at ${fmt(m.currentTime)}`); });
     on("ended", () => {
-      track("video_completed", { question: Q[cur].id, index: cur + 1 }, `Q${cur + 1}: watched to the end`); renderRail(); setIcons();
+      track("video_completed", { question: Q[cur].id, index: cur + 1 }, `${label(cur)}: watched to the end`); renderRail(); setIcons();
       if (cur < Q.length - 1) setTimeout(() => select(cur + 1, true), 1200);
     });
   }
@@ -112,13 +117,13 @@
     stage.classList.toggle("has-video", !!q.video);
     if (q.video) {
       if (!video.isConnected) stage.prepend(video);
-      video.src = q.video; if (q.poster) video.poster = q.poster;
+      video.src = mediaUrl(q.video); if (q.poster) video.poster = mediaUrl(q.poster);
     } else {
       video.removeAttribute("src"); video.remove();
       clock = makeClock(q.duration); bind(clock);
     }
     $("qtitle").textContent = q.title;
-    $("counter").textContent = `Q${i + 1} / ${Q.length}`;
+    $("counter").textContent = label(i);
     $("pos").textContent = `${i + 1} of ${Q.length}`;
     $("prev").disabled = i === 0; $("next").disabled = i === Q.length - 1;
     renderRail(); renderTranscript(); update(); setIcons();
@@ -126,14 +131,14 @@
   }
   const toggle = () => media().paused ? media().play() : media().pause();
   $("bigPlay").onclick = toggle; $("play").onclick = toggle;
-  $("prev").onclick = () => { track("question_skipped", { direction: "back", to: cur }, `Skipped back to Q${cur}`); select(cur - 1, !media().paused); };
-  $("next").onclick = () => { track("question_skipped", { direction: "ahead", to: cur + 2 }, `Skipped ahead to Q${cur + 2}`); select(cur + 1, !media().paused); };
+  $("prev").onclick = () => { track("question_skipped", { direction: "back", to: cur }, `Skipped back to ${label(cur - 1)}`); select(cur - 1, !media().paused); };
+  $("next").onclick = () => { track("question_skipped", { direction: "ahead", to: cur + 2 }, `Skipped ahead to ${label(cur + 1)}`); select(cur + 1, !media().paused); };
   $("bar").onclick = e => {
     const r = e.currentTarget.getBoundingClientRect(), d = media().duration || Q[cur].duration, s = ((e.clientX - r.left) / r.width) * d;
-    track("video_scrubbed", { question: Q[cur].id, to: Math.round(s) }, `Q${cur + 1}: scrubbed to ${fmt(s)}`); media().currentTime = s;
+    track("video_scrubbed", { question: Q[cur].id, to: Math.round(s) }, `${label(cur)}: scrubbed to ${fmt(s)}`); media().currentTime = s;
   };
   $("copyT").onclick = () => {
-    track("transcript_copied", { question: Q[cur].id }, `Q${cur + 1}: copied the transcript`);
+    track("transcript_copied", { question: Q[cur].id }, `${label(cur)}: copied the transcript`);
     navigator.clipboard?.writeText(Q[cur].lines.map(l => l[1]).join(" ")).then(() => { $("copyT").textContent = "Copied"; setTimeout(() => $("copyT").textContent = "Copy", 1500); }).catch(() => {});
   };
   function goQuestion(ref) {
@@ -160,14 +165,15 @@
   document.querySelectorAll("[data-goto-sec]").forEach(b => b.addEventListener("click", () => $(b.dataset.gotoSec).scrollIntoView({ behavior: "smooth" })));
 
   /* ── Inline reference videos (e.g. a recorded reference) ── */
+  document.querySelectorAll("[data-inline-poster]").forEach(img => { img.src = mediaUrl(img.dataset.inlinePoster); });
   document.querySelectorAll("[data-inline-video]").forEach(box => {
     box.addEventListener("click", () => {
       if (box.classList.contains("playing")) return;
       const name = box.dataset.name, v = document.createElement("video");
-      v.src = box.dataset.inlineVideo; v.controls = true; v.playsInline = true; v.autoplay = true;
+      v.src = mediaUrl(box.dataset.inlineVideo); v.controls = true; v.playsInline = true; v.autoplay = true;
       box.classList.add("playing"); box.appendChild(v);
       const st = S.videos[name] = { title: name, plays: 0, maxPct: 0, watchedSec: 0, milestones: [] };
-      v.addEventListener("play", () => { st.plays++; track("reference_video_played", { video: name }, `Played ${name}`); });
+      v.addEventListener("play", () => { st.plays++; track("inline_video_played", { video: name }, `Played ${name}`); });
       v.addEventListener("timeupdate", () => {
         const pct = Math.round((v.currentTime / (v.duration || 1)) * 100); if (pct > st.maxPct) st.maxPct = pct;
         [25, 50, 75, 100].forEach(ms => { if (pct >= ms && !st.milestones.includes(ms)) { st.milestones.push(ms); track("video_progress", { video: name, percent: ms }); } });

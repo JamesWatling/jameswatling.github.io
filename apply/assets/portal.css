@@ -168,6 +168,12 @@ section { padding-block: 72px 8px; }
 .closing .actions { display: flex; gap: 10px; flex-wrap: wrap; }
 footer { padding-block: 8px 48px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
 
+/* Intro video beside the headline */
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+@media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+.intro-video { border: 1px solid rgba(248,247,255,.18); box-shadow: 0 20px 50px rgba(0,0,0,.35); cursor: pointer; overflow: hidden; }
+.intro-video small { text-transform: uppercase; letter-spacing: .04em; }
+
 /* Real video element inside the stage */
 .stage video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; background: var(--stage); }
 .stage.has-video::before, .stage.has-video .face, .stage.has-video .ph { display: none; }

@@ -1,153 +1,418 @@
 {
-  "_note": "Shared answer library. A company page lists the ids it shows. Set video to an MP4 URL (e.g. on R2) once recorded; until then the player runs in placeholder mode. Replace outline lines with Whisper transcript segments [seconds, text].",
+  "_note": "Shared answer library. A company page lists the ids it shows. video/poster are file names resolved against the page's mediaBase (or /videos/edits/ on localhost). lines are [seconds, text] from Whisper on the final cut.",
   "questions": {
     "startup-em": {
       "title": "How do you thrive in a startup environment? How do you need to adapt as an EM to be effective at a startup?",
       "short": "Thriving at a startup",
-      "duration": 150,
-      "video": null,
-      "poster": null,
-      "transcriptStatus": "outline",
+      "duration": 104,
+      "video": "startup-em.mp4",
+      "poster": "startup-em.jpg",
+      "transcriptStatus": "transcript",
       "lines": [
         [
-          0,
-          "What a startup environment means to me, and why I do my best work in it"
+          0.0,
+          "As an EM, I do my best work when the distance between myself and the customer is short. And as someone that's worked at a lot of early stage startups and now at a larger enterprise, what I really do miss is kind of small agile teams that can work really fast."
         ],
         [
-          25,
-          "A concrete example: EarlyDay, from team of one to shipping weekly"
+          15.8,
+          "During my time at EarlyDay, I was the founding CTO, the first employee. I wrote the entire platform by myself and grew hundreds of thousands of jobs, hired the entire team and retained them all throughout the entire time."
         ],
         [
-          60,
-          "How the EM role changes: hands on the code, closer to customers, fewer layers"
+          26.6,
+          "Helping raise $4 million and like being involved in technical due diligence with acquisitions and more. So what I really loved about that was if something needed to be done, I did it."
         ],
         [
-          95,
-          "What I deliberately stop doing compared with a larger company"
+          37.8,
+          "If it was hiring, if it was recruiting, if it was talking to investors, if it was, you know, setting up our AWS multi-AZ availability zones, if it was doing backups, if it was doing compliance checklists, it kind of did it all there."
         ],
         [
-          125,
-          "Close: how I'd adapt specifically for your stage"
+          51.6,
+          "So I personally really thrive in a startup environment because I like to wear a lot of different hats. I like to move quickly. I like to unblock people."
+        ],
+        [
+          57.8,
+          "I like to be close to the product. And my history definitely reflects that being a really early stage engineer. As an EM at an early stage startup, I believe my job is to firstly hire great talent and to grow them as well."
+        ],
+        [
+          69.9,
+          "But it's to be a facilitator between product and the engineers and business stakeholders to make sure we're working on the right thing at the right time."
+        ],
+        [
+          76.7,
+          "I think it's important at a startup to have as much process as makes sense and to constantly evaluate it. Startups don't need a decision by consensus, but need just as much process, but need just as much process so that they can ship effectively, ship good quality and have confidence in the things that they do."
+        ],
+        [
+          91.7,
+          "So for me, thriving at a startup means owning outcomes, being close enough to the team and creating processes just enough in place that we can enable the team to move at full velocity without having any roadblocks or being blocked by anything else."
         ]
-      ]
+      ],
+      "kind": "question"
     },
     "team-relationship": {
       "title": "Describe your most effective relationship with the team from a technical perspective. What role do you play? What are you accountable for and what is the team accountable for?",
       "short": "My relationship with the team",
-      "duration": 160,
-      "video": null,
-      "poster": null,
-      "transcriptStatus": "outline",
+      "duration": 138,
+      "video": "team-relationship.mp4",
+      "poster": "team-relationship.jpg",
+      "transcriptStatus": "transcript",
       "lines": [
         [
-          0,
-          "The team I worked best with, and what made it work"
+          0.0,
+          "So the team I'm most proud of is my current one at Spring Health. The kind of scale that we're working with is we have 130 million covered lives and millions of users using our product every day, and we're really impacting people's lives, and my team is right on the direct firing line for that."
         ],
         [
-          30,
-          "The role I play technically: architecture partner, reviewer, unblocker"
+          15.5,
+          "And I manage 15 engineers across three different teams all across the U.S. and Latin America, and integrating the team through an acquisition has also been an interesting challenge."
         ],
         [
-          70,
-          "What I'm accountable for: direction, quality bar, delivery, people"
+          26.7,
+          "So a recent example here is at Spring Health, I was responsible and my team for migrating from a legacy video vendor to a custom white-labeled Zoom Video SDK project."
         ],
         [
-          105,
-          "What the team is accountable for: design decisions, estimates, owning production"
+          39.2,
+          "We had to do that whilst not dropping any sessions. We had between 10,000 and 15,000 sessions a day, and we needed a seamless process. We have a lot of external clients. We have a mobile app, and we had various different apps that both a provider and a member would see."
         ],
         [
-          135,
-          "Where the line moves as the team matures"
+          54.9,
+          "And I was responsible for resource planning, for getting the team together, for projecting a high-level timeline, and bringing my engineers on board."
+        ],
+        [
+          64.4,
+          "My engineers were responsible for delivering the information to me on the technical plan, on what their best approach was for that, with any trade-offs, and my role was to convince product, engineering, senior leadership, that firstly, there was the business case for us to migrate to this platform, which I was able to make very clearly because of various business metrics."
+        ],
+        [
+          84.5,
+          "So I was accountable for the timeline, I was accountable for the business KPIs that we had set going into it, my engineers were accountable for the estimates that they gave at their individual levels."
+        ],
+        [
+          96.0,
+          "They were accountable for product quality, I obviously set the expectation of technical excellence and how we will deliver this project, but they are responsible for delivering on that."
+        ],
+        [
+          105.0,
+          "I don't want my team to be a ticket factory. I want engineers that, like, love working with product, write designs, and care about what happens after the code goes into production."
+        ],
+        [
+          114.5,
+          "As a team matures, I think it changes. With a new team, I'd be closer to the code, really understanding what's going on, and as people grow, both in the company, as well as in the role, they'll learn more of the technical ownership."
+        ],
+        [
+          129.0,
+          "And then my role would be more in removing friction for them and protecting their time for technical work and making sure the business understands why the work that they're doing matters the most."
         ]
-      ]
+      ],
+      "kind": "question"
     },
     "execution-systems": {
       "title": "What strategies, processes, and methodologies do you operationalize to get your teams to execute most effectively?",
       "short": "How I get teams executing",
-      "duration": 150,
-      "video": null,
-      "poster": null,
-      "transcriptStatus": "outline",
+      "duration": 163,
+      "video": "execution-systems.mp4",
+      "poster": "execution-systems.jpg",
+      "transcriptStatus": "transcript",
       "lines": [
         [
-          0,
-          "My principle: the lightest process that keeps the team shipping"
+          0.0,
+          "So I think my principle is the lightest process that keeps the team shipping with confidence is the most important process should change and evolve over time."
         ],
         [
-          25,
-          "Planning: outcome-based goals, small batches, weekly priorities"
+          8.2,
+          "If a process doesn't work, we should always be willing to change it. We shouldn't just do it because that is the status quo. So I think Wonderschool is my best example of this. When I arrived, the team shipped very carefully and rarely and had a lot of support tickets."
         ],
         [
-          60,
-          "Execution: design docs for big bets, trunk-based delivery, clear ownership"
+          23.3,
+          "A lot of that was a legacy code as well as a history of a punitive culture as well as low accountability. So the first thing I did to come in and solve this problem was increasing visibility wherever we could have it."
         ],
         [
-          95,
-          "Feedback loops: metrics we actually watch, retros that change things"
+          38.0,
+          "So adding instrumentation on the platform with Datadog, reviewing all of our logs and just constantly keeping an eye on the backlog of alarms and things that would go off constantly and not being the person that just lets them happen and actually going through and fixing them."
         ],
         [
-          125,
-          "An example of a process I removed because it slowed us down"
+          52.4,
+          "We also improved our CI/CD process. It was somewhat automated, somewhat manual, but there was always a human in the loop and there were specific releases."
+        ],
+        [
+          62.0,
+          "So we moved that to a GitHub Actions-based workflow with just a standard anytime something gets merged to main, it gets shipped to production, which kind of helped overcome the psychological safety of shipping things and kind of made us as engineers to realize that once something is merged, it is going out."
+        ],
+        [
+          78.3,
+          "And not, I merged something and someone ships it later and maybe something happens. So it really helped with the accountability there. One of the other things we did to improve quality was feature flagging."
+        ],
+        [
+          87.9,
+          "We used to use feature flagging for releases or for testing, but we kind of had a new approach of with larger changes or just anything in general."
+        ],
+        [
+          97.7,
+          "We would launch it dark, get it to production and turn it on at a time we're ready sometimes deployment pipelines can take a long time or various things can happen."
+        ],
+        [
+          104.9,
+          "So having things ready and deliberately turned on with a feature flag helped us to have that confidence as well. And finally, obviously testing is a big part, we did have a lot of flaky tests, we did have the testing pyramid was a little bit lopsided, we didn't have end-to-end testing, so just to focus on ensuring that there was a consistent quality when it comes to tests."
+        ],
+        [
+          125.2,
+          "What that meant was we had some GitHub checks that ensured test coverage generally went up over time, we migrated things from JavaScript to TypeScript, as well as increasing just general test coverage across unit integration and end-to-end tests."
+        ],
+        [
+          143.6,
+          "The result of that was our support ticket volume dropped by 85% and just as important, the team shifted from being scared to release to releasing more frequently and overall developer velocity and happiness went up as part of that."
+        ],
+        [
+          156.9,
+          "And I think the most important part of process is it's easy to add it, it's easy to remove it and no process is final."
         ]
-      ]
+      ],
+      "kind": "question"
     },
     "hiring-onboarding": {
       "title": "Describe your experience with the end-to-end process of hiring and onboarding engineers. Where do you have experience being hands-on throughout this process?",
       "short": "Hiring & onboarding",
-      "duration": 160,
-      "video": null,
-      "poster": null,
-      "transcriptStatus": "outline",
+      "duration": 135,
+      "video": "hiring-onboarding.mp4",
+      "poster": "hiring-onboarding.jpg",
+      "transcriptStatus": "transcript",
       "lines": [
         [
-          0,
-          "How many engineers I've hired, and at what stages"
+          0.0,
+          "So I have hired dozens of engineers over my career from being an interviewer to being the hiring manager. My probably best example of this was at Wonderschool."
         ],
         [
-          25,
-          "Sourcing and writing the role: where I'm hands on"
+          9.9,
+          "I onboarded about eight new engineers during my time there. I set a new hiring pipeline process. We had a pretty archaic process that didn't really have the bar that I thought we should have for our engineers."
         ],
         [
-          55,
-          "Interview loop design, rubrics and calibrated debriefs"
+          22.9,
+          "So we implemented very defined rounds that set clear expectations for candidates. We implemented a system design as well as a pair programming exercise, as well as a leadership interview."
         ],
         [
-          90,
-          "Closing candidates and selling the mission"
+          32.9,
+          "Traditionally, before, we just had two pair programming exercises and the hiring manager. And we either had candidates that were really good at getting through the technical exercise but did really struggle on the system design,"
         ],
         [
-          120,
-          "Onboarding: first PR in week one, a 30/60/90 plan, a buddy"
+          45.9,
+          "or other engineers that would not do very well in an engineering leadership interview. I've been involved in every step, headcount planning, resource planning, writing job descriptions, writing the process, running interview loops, collecting feedback, doing reference calls and everything like that."
+        ],
+        [
+          66.8,
+          "When I was at EarlyDay, we didn't have a recruiter. I did, I hired all the engineers and the designers, and I implemented the entire process myself from offers, from budgeting, everything."
+        ],
+        [
+          78.0,
+          "One of the most important things I can think of with hiring is making sure every interviewer has a consistent hiring process. At roles, I've definitely seen where there is a different bar between interviewers."
+        ],
+        [
+          88.1,
+          "So, really making sure that the people conducting interviews are trained well and it's consistent, so we can ensure a consistent bar and experience for the employee."
+        ],
+        [
+          97.1,
+          "Personally, I think onboarding is just as an important part of hiring as the actual recruiting part is. Generally, my aim is always where possible to have an engineer ship the smallest change to production on their first day, but generally setting 30, 60, 90-day plans is great."
+        ],
+        [
+          112.7,
+          "Checking in often, but also not getting in their way and letting them kind of experience the process as they go through it, and then most importantly, provide feedback on the process for later so the next person has a better experience."
+        ],
+        [
+          127.1,
+          "I think hiring is the most important job as an EM, if you hire good people, they can do good work, it's pretty hard to not be successful there."
         ]
-      ]
+      ],
+      "kind": "question"
     },
     "ai-philosophy": {
       "title": "Describe your philosophy around, and experience with, AI technologies and tools. How have you personally leveraged these tools and what have you built? How have your teams used them?",
       "short": "AI: philosophy & practice",
-      "duration": 180,
-      "video": null,
-      "poster": null,
-      "transcriptStatus": "outline",
+      "duration": 140,
+      "video": "ai-philosophy.mp4",
+      "poster": "ai-philosophy.jpg",
+      "transcriptStatus": "transcript",
       "lines": [
         [
-          0,
-          "My philosophy: AI as leverage for engineers, with evaluation before hype"
+          0.0,
+          "So my philosophy is that AI is leverage, not magic. It makes good engineers faster, and it's only as trustworthy as you can measure it. I've been shipping AI into production and product since about 2023."
         ],
         [
-          35,
-          "What I've built personally: agentic pipelines, RAG, AI phone bots at Haestus"
+          14.1,
+          "GPT-3 came out, and we had a process that we were doing manual data entry with some offshore contractors, and we were able to use GPT-3 to parse structured data out of resumes in a way that had a higher reliability"
         ],
         [
-          80,
-          "How my teams use it day to day: coding agents, review, testing, docs"
+          29.0,
+          "than our offshore contractors, as well as we went from a resolution of 48 business hours to a matter of seconds, which was hugely impactful for the business."
         ],
         [
-          120,
-          "Results: what got faster, and what we learned not to delegate"
+          42.8,
+          "At Spring Health, we use AI. In our telehealth platform, we have transcripts. We feed our AI into LLMs, and we do all sorts of interesting insights."
         ],
         [
-          155,
-          "Where I think it's heading for engineering teams"
+          51.3,
+          "We have a lot of in-product experiences that really enhance the therapy session there as well. Other than that, I use AI every day. I've built a lot of things outside of my day job on the side using voicebots, chatbots, a lot of in-product experiences,"
+        ],
+        [
+          69.9,
+          "as well as just building products using AI as a developer that I never would have dreamt of building without a team. One of my other exciting personal projects with AI is a long time ago, I built a website called thebotportfolio.com,"
+        ],
+        [
+          82.1,
+          "which uses the Robinhood MCP and my own custom instructions in which it writes a blog post and trades with real money on the real stock market."
+        ],
+        [
+          92.3,
+          "It keeps a diary. It keeps a website up to date of what trades it did, what it learned, and then it uses that information to build and do better over time."
+        ],
+        [
+          99.6,
+          "I think the most important thing for my teams with AI is being curious. AI technology, as we all know, changes week on week. And in the early days of AI, there was a lot of more senior engineers that had bad experiences early on,"
+        ],
+        [
+          113.1,
+          "and, you know, a new model would drop and they would be hesitant to try it or they would think it produced a lot of slop. So definitely trying to encourage curiosity."
+        ],
+        [
+          122.3,
+          "There's new tools, there's new models that drop, there's new best practices. You know, we used to think it was prompt engineering, then it was context engineering, then it was memory,"
+        ],
+        [
+          132.4,
+          "then it was all these other things that it could be. And just staying on top of it is a really important thing that I see in my role, but also encouraging in my employees."
+        ]
+      ],
+      "kind": "question"
+    },
+    "intro": {
+      "title": "Intro",
+      "short": "Intro",
+      "kind": "extra",
+      "label": "Intro",
+      "duration": 26,
+      "video": "intro.mp4",
+      "poster": "intro.jpg",
+      "transcriptStatus": "transcript",
+      "lines": [
+        [
+          0.0,
+          "Hi, I'm James Watling. Thanks for checking out my video resume. In the age of AI, I feel like when you get questions from a recruiter, it's easy to throw them in an LLM and then just give an email response, but I wanted to do a more personal touch and send you this website as well as these videos to get a taste of what it's like to work with me. In the world of remote work, I think having asynchronous videos and this kind of content is where the future is going, so just wanted to give you a little taste. So thanks for watching and please do let me know if you have any questions."
+        ]
+      ]
+    },
+    "how-i-got-here": {
+      "title": "How I got here: New Zealand, Singapore, the Bay Area, and Spring Health.",
+      "short": "How I got here",
+      "kind": "extra",
+      "label": "About me",
+      "duration": 220,
+      "video": "how-i-got-here.mp4",
+      "poster": "how-i-got-here.jpg",
+      "transcriptStatus": "transcript",
+      "lines": [
+        [
+          0.0,
+          "I'm James Watling. I'm originally from New Zealand. That's where I went to my university and started my career as a software engineer. I worked for an agency there in my own startup. In about 2014, I moved to Singapore, where I was part of a bunch of really early-stage startups, one of them an Airbnb kind of competitor that did short-term rentals across Asia and the Middle East, which was a Ruby on Rails app where I did my first taste of managing. I managed three engineers there, kind of early stage."
+        ],
+        [
+          24.9,
+          "From there, I went to a company called GuavaPass, which was a marketplace for gyms in a similar way to ClassPass, who ended up acquiring us. I was the first engineering hire there after the CTO and scaled that team up to, I think I had seven engineers and a designer at the end, and we were acquired by ClassPass in, I believe, 2019."
+        ],
+        [
+          43.7,
+          "From there, I took a job in the San Francisco Bay Area. I was recruited to work for a company called HubToken with Eric Ly, one of the co-founders of LinkedIn, where we built a bunch of applications built on the blockchain for professional credentialing and social networks."
+        ],
+        [
+          59.4,
+          "After that, I wanted to find purpose, and I was contacted by a couple of women I used to work with in Singapore, and we launched an early startup, pre-seed, pre-angel, helping build an MVP, and I was the founding CTO, of which we started an early childhood marketplace."
+        ],
+        [
+          77.1,
+          "Part of the problem we were trying to solve was during COVID, a lot of women left the workplace, and we were really trying to help with that problem."
+        ],
+        [
+          83.0,
+          "And when we were talking to childcare centers and governments and also in parents, a lot of the problem was just a supply problem. And the biggest supply problem was there was a lack of teachers and underutilized teachers."
+        ],
+        [
+          95.6,
+          "So we built the first early childhood marketplace for teachers. You could think of it as a LinkedIn for teachers. We scaled up to tens of thousands of teachers across various metro areas in the U.S."
+        ],
+        [
+          107.7,
+          "So in 2024, we were acquired by a Series B, Andreessen Horowitz-backed company called Wonderschool. I joined that team with my existing engineers and designers and was then given two other of the core products, their CCMS, their childhood management software, as well as part of their marketplace product."
+        ],
+        [
+          125.6,
+          "I brought on a new contracting company and ended up hiring about eight to nine engineers there. I stabilized the product a lot. There was a bunch of quality issues and just general DORA metrics needed some love."
+        ],
+        [
+          140.6,
+          "So increased developer throughput, increased deployment time, mean time to resolution, and all the other things that kind of indicate good quality."
+        ],
+        [
+          148.7,
+          "I was there for about a year until I moved into my current role at Spring Health, where I'm an Associate Director of Engineering. When I was first hired there, I was managing one team that was the core Clinical Notes product, which is the most sensitive and the compliance aspect of our product."
+        ],
+        [
+          164.6,
+          "Over the year and a half I've been there, I then split out another team, which managed our telehealth experience. So we migrated from a vendor to Zoom, building a custom white-labeled telehealth platform with Zoom's video SDK, in which we serve tens of thousands of users per day."
+        ],
+        [
+          179.5,
+          "Part of the problem we were trying to solve was our existing vendor had about a 15% failure rate, which means there was some kind of issue in a session."
+        ],
+        [
+          187.0,
+          "And I was tasked with getting that number down to below 5%. And moving to Zoom with my new team, we were able to do that and stay under budget."
+        ],
+        [
+          194.1,
+          "And we improved the quality of the code and the overall experience significantly as part of that. Since then, I've also, we acquired another company called Alma, and I run a team there that owns the equivalent telehealth platform on Alma."
+        ],
+        [
+          207.3,
+          "And between both of my teams, we do about 15,000 telehealth sessions a day with a lot of instrumentation, on-call duties, and everything else you would expect from such a high volume product."
+        ]
+      ]
+    },
+    "why-dispatch": {
+      "title": "Why Dispatch, and why I'd be a good fit.",
+      "short": "Why Dispatch",
+      "kind": "extra",
+      "label": "Why Dispatch",
+      "duration": 100,
+      "video": "why-dispatch.mp4",
+      "poster": "why-dispatch.jpg",
+      "transcriptStatus": "transcript",
+      "lines": [
+        [
+          0.0,
+          "So I really am interested in the role at Dispatch. A personal hobby of mine is personal finance. I'm very passionate about empowering people and I think there's a big knowledge problem in personal finance and it's really one of the freedoms in life that's often overlooked."
+        ],
+        [
+          15.6,
+          "I personally know a few financial advisors that use Wealthbox. I have a client in my co-working space here that I built basically just like a website for them but a bunch of automations and things with Wealthbox."
+        ],
+        [
+          27.5,
+          "So I have a little bit of exposure to that and about a year ago I built a personal finance tool for myself with Plaid and MX where I ingest all my bank statements."
+        ],
+        [
+          37.0,
+          "I use AI kind of things that you would expect from other products today but I built a mobile app and that at the time to really dive and try and do some like forecasting for my own retirement and savings and things like that which is really fun and interesting."
+        ],
+        [
+          49.3,
+          "I also very strongly feel like I'm a great player coach. I've done that many times in many roles. I've been a founding CTO, took a company from its literal first commit all the way through acquisition."
+        ],
+        [
+          61.3,
+          "I've led dozens of engineers, hired dozens of engineers and really thrive on improving processes and getting out of the way of my engineers but enabling them to do really great work."
+        ],
+        [
+          72.5,
+          "I've built entire hiring systems, I've built platforms, I've built the business side as well, I've helped on fundraising, I've done a really wealth of things in the startup space and that's where I really thrive compared to larger companies."
+        ],
+        [
+          87.2,
+          "Yeah, I'm also very passionate about AI and think AI is the future and have built a lot of products with AI and I would really love to help out what you're doing at Dispatch and I would love to talk to you more."
         ]
       ]
     }
