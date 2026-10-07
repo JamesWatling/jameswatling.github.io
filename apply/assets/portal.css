@@ -64,6 +64,27 @@ section { padding-block: 72px 8px; }
 .sec-head .label { color: var(--purple-ink); display: block; margin-bottom: 10px; }
 .sec-head p { margin: 10px 0 0; color: var(--muted); max-width: 60ch; }
 
+/* How this page works */
+.how { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 28px; padding: 22px 4px 0; }
+@media (max-width: 760px) { .how { grid-template-columns: 1fr; } }
+.how .label { color: var(--purple-ink); }
+.how p { margin: 6px 0 0; font-size: 14.5px; color: var(--muted); }
+.how a { color: var(--purple-ink); }
+
+/* Written answers */
+.answers { display: grid; gap: 10px; max-width: 860px; }
+.answer { background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+.answer[open] { border-color: var(--purple); }
+.answer summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 40px minmax(0, 1fr) 20px; gap: 12px; padding: 16px 20px; align-items: start; }
+.answer summary::-webkit-details-marker { display: none; }
+.answer summary::after { content: "+"; font-family: var(--mono); color: var(--purple-ink); font-size: 18px; line-height: 1.2; }
+.answer[open] summary::after { content: "–"; }
+.answer .qn { font-family: var(--mono); font-size: 12px; color: var(--purple-ink); padding-top: 3px; }
+.answer .qt { font-weight: 500; }
+.answer .ab { padding: 0 20px 18px 72px; }
+@media (max-width: 560px) { .answer .ab { padding-left: 20px; } }
+.answer .ab p { margin: 0 0 12px; color: var(--muted); max-width: 70ch; }
+
 /* Answers */
 .player { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 16px; }
 @media (max-width: 860px) { .player { grid-template-columns: 1fr; } }

@@ -196,6 +196,9 @@
     track("question_link_clicked", { question: b.dataset.gotoQ, from: b.closest("[data-sec]")?.dataset.sec }, `Jumped to ${b.dataset.gotoQ} from ${b.closest("[data-sec]")?.dataset.sec}`);
     goQuestion(b.dataset.gotoQ);
   }));
+  document.querySelectorAll("details[data-answer]").forEach(d => d.addEventListener("toggle", () => {
+    if (d.open) track("written_answer_opened", { question: d.dataset.answer }, `Read the written answer to ${d.querySelector(".qn").textContent}`);
+  }));
   document.querySelectorAll("[data-goto-sec]").forEach(b => b.addEventListener("click", () => $(b.dataset.gotoSec).scrollIntoView({ behavior: "smooth" })));
 
   /* ── Inline reference videos (e.g. a recorded reference) ── */

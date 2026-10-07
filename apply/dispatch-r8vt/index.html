@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="/apply/assets/portal.css?v=cfe8b4f5">
+    <link rel="stylesheet" href="/apply/assets/portal.css?v=657b8ae2">
 
     <script type="application/json" id="portal-config">
     {
@@ -48,7 +48,7 @@
         <div>
           <div class="label" style="color:rgba(248,247,255,.7)">Prepared for the Dispatch team · October 2026</div>
           <h1 style="margin-top:14px">A player-coach for the team building <em>wealth's data layer</em>.</h1>
-          <p class="lede">Start with the 30-second intro. My answers to your five questions are on video below, with transcripts, followed by how my experience lines up with the role, the things I've built, and how I'd spend my first 90 days.</p>
+          <p class="lede">Every advisory firm runs CRMs, custodians and planning tools that were never built to talk to each other. Opening accounts in minutes and cutting NIGOs is as much a delivery problem as a product one, and delivery is what I do best. Start with the 30-second intro.</p>
         </div>
         <div class="mini-stage intro-video" data-inline-video="intro.mp4" data-name="Intro video" role="button" tabindex="0" aria-label="Play a 30-second intro from James">
           <img data-inline-poster="intro.jpg" alt="">
@@ -68,6 +68,12 @@
     </div>
     <div class="strip"></div>
   </header>
+
+  <div class="how" aria-label="How this page works">
+    <div><span class="label">Watch</span><p>Your five questions, answered on video, plus how I got here and why Dispatch. Click any transcript line to jump, or open theater view.</p></div>
+    <div><span class="label">Read</span><p>Prefer text? Every answer is <a href="#written">written out below the videos</a>.</p></div>
+    <div><span class="label">Check</span><p>How my experience maps to the role, what I've built this year, and references you can verify.</p></div>
+  </div>
 
   <section id="answers" data-sec="Answers">
     <div class="sec-head">
@@ -104,6 +110,35 @@
     <div class="rail" id="rail" role="list"></div>
   </section>
 
+  <section id="written" data-sec="Written answers">
+    <div class="sec-head">
+      <div><span class="label">Prefer to read?</span><h2>Written answers</h2>
+      <p>The same five answers, in writing.</p></div>
+    </div>
+    <div class="answers">
+      <details class="answer" data-answer="startup-em" open>
+        <summary><span class="qn">Q1</span><span class="qt">How do you thrive in a startup environment? How do you need to adapt as an EM to be effective at a startup?</span></summary>
+        <div class="ab"><p>I do my best work when the distance between the team and the customer is short. Most of my career has been at early-stage companies. At EarlyDay I was the founding CTO and first employee. I wrote the first version of the platform, hired the whole team, and kept every engineer through our acquisition by Wonderschool. I also helped raise $4M and ran technical due diligence. If something needed doing, from hiring to AWS setup to compliance checklists, I did it.</p><p>The biggest adjustment for an EM at a startup is that you can&#x27;t manage from a distance. I stay close to code reviews, design discussions and customers, so my judgement on estimates and trade-offs is informed. My job is to hire and grow great people, and to be the link between Product, engineering and the business so we work on the right thing at the right time.</p><p>Process should be just enough to ship quickly with quality and confidence. I add it when we feel the pain and remove it when it stops paying off.</p><button class="ref" data-goto-q="startup-em">▶ Watch the video answer</button></div>
+      </details>
+      <details class="answer" data-answer="team-relationship">
+        <summary><span class="qn">Q2</span><span class="qt">Describe your most effective relationship with the team from a technical perspective. What role do you play? What are you accountable for and what is the team accountable for?</span></summary>
+        <div class="ab"><p>At Spring Health I lead 15 engineers across three teams in the US and Latin America. Together we own about 15,000 telehealth sessions a day across Spring Health and Alma, plus clinical notes and compliance.</p><p>A good example is our move from a legacy video vendor to a custom platform on Zoom&#x27;s Video SDK. We couldn&#x27;t drop sessions, and we had mobile apps, external clients, and separate provider and member experiences. I made the business case to leadership, planned resourcing, and owned the timeline and KPIs. The engineers owned the technical plan, the trade-offs, their estimates and the quality of what shipped. Session failures fell from about 15% to under 5%, under budget.</p><p>I see my technical role as architecture partner, advocate for technical excellence, and unblocker. Staff engineers and tech leads own technical decisions; I make sure they&#x27;re made deliberately, with failure modes and business outcomes considered. I&#x27;m accountable for direction, quality, delivery and people. The team owns design, estimates, and what they ship to production. As a team matures, I step back from the code and spend more time removing friction and protecting time for technical work.</p><button class="ref" data-goto-q="team-relationship">▶ Watch the video answer</button></div>
+      </details>
+      <details class="answer" data-answer="execution-systems">
+        <summary><span class="qn">Q3</span><span class="qt">What strategies, processes, and methodologies do you operationalize to get your teams to execute most effectively?</span></summary>
+        <div class="ab"><p>My principle is the lightest process that keeps the team shipping with confidence, and none of it is permanent.</p><p>Wonderschool is my clearest example. The team shipped rarely and carefully, with high support volume, legacy code and low accountability. We rebuilt the delivery system in layers. We instrumented the platform with Datadog and worked through the alert backlog instead of ignoring it. We moved CI/CD to GitHub Actions so anything merged to main ships to production, which made ownership clear. We shipped larger changes dark behind feature flags. And we fixed flaky tests, added coverage checks, migrated JavaScript to TypeScript and added end-to-end tests. Support tickets fell 85%, and the team went from scared to release to shipping often.</p><p>Day to day, that means clear sprint outcomes agreed with Product, small shippable tickets, design docs for larger bets, blameless post-mortems with follow-ups that actually get done, and protected time for staff engineers to tackle the technical debt that slows everyone down.</p><button class="ref" data-goto-q="execution-systems">▶ Watch the video answer</button></div>
+      </details>
+      <details class="answer" data-answer="hiring-onboarding">
+        <summary><span class="qn">Q4</span><span class="qt">Describe your experience with the end-to-end process of hiring and onboarding engineers. Where do you have experience being hands-on throughout this process?</span></summary>
+        <div class="ab"><p>I&#x27;ve hired dozens of engineers, as an interviewer and as the hiring manager, and I&#x27;ve been hands-on at every stage: headcount and budget planning, job descriptions, designing the process, running loops, reference calls, offers and closing.</p><p>At EarlyDay there was no recruiter, so I hired every engineer and designer myself. At Wonderschool I hired about eight engineers and rebuilt the loop. Strong coders were getting through without systems thinking, so we added system design, pair programming and a leadership interview, and trained interviewers so the bar stayed consistent. I also defined engineering levels for the company. At Spring Health I&#x27;ve hired seven engineers, with 100% retention on my teams. Remotely published a case study on that model, and three other managers at Spring Health now use it.</p><p>Onboarding matters as much as hiring. Where possible, a new engineer ships a small change to production on day one, then works to a 30-60-90 day plan with regular check-ins. I ask every new hire for feedback so the next person has a better experience.</p><button class="ref" data-goto-q="hiring-onboarding">▶ Watch the video answer</button></div>
+      </details>
+      <details class="answer" data-answer="ai-philosophy">
+        <summary><span class="qn">Q5</span><span class="qt">Describe your philosophy around, and experience with, AI technologies and tools. How have you personally leveraged these tools and what have you built? How have your teams used them?</span></summary>
+        <div class="ab"><p>AI is leverage, not magic. It makes good engineers faster, and it&#x27;s only as trustworthy as your ability to measure it.</p><p>I&#x27;ve shipped AI in production since GPT-3. At EarlyDay we replaced manual résumé data entry by contractors with LLM extraction that was more reliable, and teacher approvals went from 48 business hours to minutes. At Spring Health we use session transcripts with LLMs to power in-product experiences, with a strong focus on safety and HIPAA.</p><p>Personally, I build with AI coding agents every day: more than 2,500 commits this year across a car rental platform with a booking voice agent, an AI concierge for home service businesses, and a volunteer platform for a Montana nonprofit. I&#x27;ve also built a personal finance app on Plaid and MX, and The Bot Portfolio, an agent that trades a real brokerage account with guardrails in code and a public audit log.</p><p>With teams, I focus on curiosity. Tools and models change every week, and some senior engineers were put off by early experiences. I encourage people to try new tools, share what works, and measure the impact, as we did when we adopted AI code review early at Wonderschool.</p><button class="ref" data-goto-q="ai-philosophy">▶ Watch the video answer</button></div>
+      </details>
+    </div>
+  </section>
+
   <section id="fit" data-sec="Role fit">
     <div class="sec-head">
       <div><span class="label">The role</span><h2>What you need, what I've done, what I'd do</h2>
@@ -113,8 +148,8 @@
       <div class="fit2-head"><span>You need</span><span>I've done</span><span>At Dispatch, I'd</span></div>
       <div class="fit2-row"><div class="need">Own execution end to end</div><div class="done"><span class="m">I've done</span>Spring Health: moved telehealth from a legacy vendor to a custom Zoom platform with no dropped sessions. Failures fell from 15% to under 5%, under budget.</div><div class="do"><span class="m">At Dispatch, I'd</span>Take ownership of the core workflow team's delivery from week one, with a weekly outcome review shared with Product.</div><div class="go"><button data-goto-q="team-relationship">▶ Q2</button></div></div>
       <div class="fit2-row"><div class="need">Connective tissue with Product</div><div class="done"><span class="m">I've done</span>Made the business case for that migration to leadership. My teams agree sprint outcomes with Product and write designs, not just tickets.</div><div class="do"><span class="m">At Dispatch, I'd</span>Sequence the roadmap with Rafi, and tie each project to a customer metric: time to open, NIGO rate, sync failures.</div><div class="go"><button data-goto-q="startup-em">▶ Q1</button></div></div>
-      <div class="fit2-row"><div class="need">Build the delivery system</div><div class="done"><span class="m">I've done</span>Wonderschool: Datadog, deploy on merge with GitHub Actions, feature flags and coverage gates. Support tickets fell 85%.</div><div class="do"><span class="m">At Dispatch, I'd</span>Review CI, flags and the test pyramid in my first 30 days, and cut cycle time without adding ceremony.</div><div class="go"><button data-goto-q="execution-systems">▶ Q3</button></div></div>
-      <div class="fit2-row"><div class="need">Hire and scale to 20–30</div><div class="done"><span class="m">I've done</span>Dozens hired. Rebuilt loops around system design and pair programming. 100% retention at Spring Health, and three other managers now use my model. Today: 15 engineers across 3 teams.</div><div class="do"><span class="m">At Dispatch, I'd</span>Headcount plan, job descriptions and a calibrated loop with the VP of Talent by day 60. New hires ship on day one.</div><div class="go"><button data-goto-q="hiring-onboarding">▶ Q4</button></div></div>
+      <div class="fit2-row"><div class="need">Build the delivery system</div><div class="done"><span class="m">I've done</span>Wonderschool: Datadog, deploy on merge with GitHub Actions, feature flags and coverage gates. Support tickets fell 85%.</div><div class="do"><span class="m">At Dispatch, I'd</span>Review CI, flags and the test pyramid early, and cut cycle time without adding ceremony.</div><div class="go"><button data-goto-q="execution-systems">▶ Q3</button></div></div>
+      <div class="fit2-row"><div class="need">Hire and scale to 20–30</div><div class="done"><span class="m">I've done</span>Dozens hired. Rebuilt loops around system design and pair programming. 100% retention at Spring Health, and three other managers now use my model. Today: 15 engineers across 3 teams.</div><div class="do"><span class="m">At Dispatch, I'd</span>Build the headcount plan, job descriptions and a calibrated loop with the VP of Talent. New hires ship on day one.</div><div class="go"><button data-goto-q="hiring-onboarding">▶ Q4</button></div></div>
       <div class="fit2-row"><div class="need">On-call and incidents</div><div class="done"><span class="m">I've done</span>My teams own about 15,000 sessions a day plus clinical notes and HIPAA compliance, with on-call and post-mortems.</div><div class="do"><span class="m">At Dispatch, I'd</span>Set SLOs on account opening and sync paths, a clear rotation, and post-mortems whose follow-ups get done.</div><div class="go"></div></div>
       <div class="fit2-row"><div class="need">Integrations and fintech data</div><div class="done"><span class="m">I've done</span>Integrating Alma's team and platform after the acquisition. A Wealthbox lead pipeline for an RIA. A personal finance app on Plaid and MX. Real-time sync for 100,000+ listings at Roomorama.</div><div class="do"><span class="m">At Dispatch, I'd</span>Treat each integration as a product, with contract tests, reconciliation and alerts that fire before advisers notice.</div><div class="go"><button data-goto-sec="builds">→ Builds</button></div></div>
       <div class="fit2-row"><div class="need">AI that levels up the team</div><div class="done"><span class="m">I've done</span>LLM extraction cut approvals from 48 hours to minutes at EarlyDay. I build daily with coding agents (2,500+ commits since March) and adopted AI code review early.</div><div class="do"><span class="m">At Dispatch, I'd</span>Share agent playbooks across the team and measure PR cycle time and escaped defects, not tool adoption.</div><div class="go"><button data-goto-q="ai-philosophy">▶ Q5</button></div></div>
@@ -210,53 +245,22 @@
     </div>
   </section>
 
-  <section id="plan" data-sec="First 90 days">
+  <section id="plan" data-sec="How I'd start">
     <div class="sec-head">
-      <div><span class="label">If I join</span><h2>My first 90 days at Dispatch</h2>
-      <p>Each phase ends with something you can check.</p></div>
+      <div><span class="label">If I join</span><h2>How I'd start</h2>
+      <p>No grand plan before I've met the team. This is how I start everywhere.</p></div>
     </div>
     <div class="plan">
-      <div class="phase"><div class="bar2" style="background-position:0 0"></div><span class="label">Days 1–30 · Learn</span><h3>Context through shipping</h3>
-        <ul><li>Ship a PR in week one; join on-call</li><li>Sit in on customer success calls about NIGOs and sync escalations</li><li>One-to-ones with every engineer, Rafi and Design</li></ul>
-        <p class="out"><b>By day 30:</b> a written map of the delivery system, the top three risks, and agreed team metrics.</p></div>
-      <div class="phase"><div class="bar2" style="background-position:50% 0"></div><span class="label">Days 31–60 · Tighten</span><h3>Predictable delivery</h3>
-        <ul><li>Weekly planning and outcome review with Product</li><li>SLOs and alerting on account opening and sync paths</li><li>Headcount plan and calibrated loop with the VP of Talent</li></ul>
-        <p class="out"><b>By day 60:</b> commitments hit on time, first roles open, incident process running.</p></div>
-      <div class="phase"><div class="bar2" style="background-position:100% 0"></div><span class="label">Days 61–90 · Accelerate</span><h3>Raise the floor</h3>
-        <ul><li>AI tooling rolled out with shared playbooks</li><li>Cut the process that isn't paying for itself</li><li>First hires closing, shipping in week one</li></ul>
-        <p class="out"><b>By day 90:</b> measurably shorter cycle time and a six-month plan to reach 20–30 engineers.</p></div>
+      <div class="phase"><div class="bar2" style="background-position:0 0"></div><h3>Ship something and join on-call</h3>
+        <p>The same thing I ask of every engineer I hire: a small change in production in the first week. It's the quickest way to learn the codebase, the deploy path and where it hurts.</p></div>
+      <div class="phase"><div class="bar2" style="background-position:50% 0"></div><h3>Learn where the problems really are</h3>
+        <p>One-to-ones with every engineer, time with Rafi and Design, and sitting in on customer calls, so I understand where NIGOs, failed syncs and slow openings actually come from before changing anything.</p></div>
+      <div class="phase"><div class="bar2" style="background-position:100% 0"></div><h3>Change only what's earned</h3>
+        <p>Agree a few metrics with Product and the team, then fix what's clearly costing us, the way we did at Wonderschool. Hiring starts as soon as we know which gaps matter most.</p></div>
     </div>
   </section>
 
-  <section id="reading" data-sec="Reading">
-    <div class="sec-head">
-      <div><span class="label">Homework</span><h2>What I read, and what I'd ask</h2>
-      <p>Three of your posts, and the question each one raised for me.</p></div>
-    </div>
-    <div class="reads">
-      <a class="rd" href="https://www.dispatch.io/blog/dispatch-opens-its-wealth-operations-platform-to-the-industry-with-launch-of-the-dispatch-api" target="_blank" rel="noopener" data-track="article_clicked" data-label="the Dispatch API launch post">
-        <span class="k"><span>Sep 2026</span><span>Launch</span></span><h3 style="font-size:17px">The Dispatch API launch</h3>
-        <span class="take">Agentic action under an audit and control pane is the right order: trust comes from what you can inspect.</span><span class="ask"><b>I'd ask:</b> How do you decide which workflows an agent may complete without a human sign-off?</span></a>
-      <a class="rd" href="https://www.dispatch.io/blog/dispatch-account-opening-with-schwab-apis" target="_blank" rel="noopener" data-track="article_clicked" data-label="the Schwab APIs post">
-        <span class="k"><span>Feb 2026</span><span>Engineering</span></span><h3 style="font-size:17px">Account opening with Schwab APIs</h3>
-        <span class="take">Routing each submission between the API, DocuSign and wet signature is where reliability is decided.</span><span class="ask"><b>I'd ask:</b> What share of openings still fall back to manual paths, and what's driving it?</span></a>
-      <a class="rd" href="https://www.dispatch.io/blog/dispatch-launches-advisor-transitions" target="_blank" rel="noopener" data-track="article_clicked" data-label="the Advisor Transitions post">
-        <span class="k"><span>May 2026</span><span>Product</span></span><h3 style="font-size:17px">Advisor Transitions</h3>
-        <span class="take">400% faster transitions using AI data cleansing.</span><span class="ask"><b>I'd ask:</b> How are cleansing errors caught before a client sees them?</span></a>
-    </div>
-  </section>
 
-  <section id="letter" data-sec="Cover letter">
-    <div class="sec-head"><div><span class="label">In writing</span><h2>Cover letter</h2></div></div>
-    <article class="letter">
-      <div class="meta"><span>To: The Dispatch team</span><span>October 2026</span></div>
-      <p>Hello,</p>
-      <p>Every advisory firm runs CRMs, custodians and planning tools that were never designed to talk to each other, and the data between them has to be right every time. Account opening in minutes, fewer NIGOs and faster transitions are delivery problems as much as product problems, and delivery is what I'm best at.</p>
-      <p>I'm Associate Director of Engineering at Spring Health, where I lead 15 engineers across three teams and own a platform running about 15,000 telehealth sessions a day. Before that I was founding CTO at EarlyDay through its acquisition. I still build every week: 2,500+ commits this year, including a Wealthbox pipeline for an RIA and AI agents with guardrails and audit logs, the same pattern as your Dispatch API.</p>
-      <p>I'd love to help your team ship faster without breaking trust. Thank you for reading.</p>
-      <div class="sig">James Watling<small>james@jameswatling.com · jameswatling.com</small></div>
-    </article>
-  </section>
 
   <section id="where" data-sec="Location">
     <div class="where">
@@ -295,6 +299,6 @@
 </div>
 <footer><div class="wrap">Made for Dispatch by James Watling · jameswatling.com</div></footer>
 </main>
-<script src="/apply/assets/portal.js?v=a71010df" defer></script>
+<script src="/apply/assets/portal.js?v=f8118865" defer></script>
 </body>
 </html>
