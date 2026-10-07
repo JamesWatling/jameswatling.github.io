@@ -1,12 +1,12 @@
 {
-  "_note": "Shared answer library. A company page lists the ids it shows. video/poster are file names resolved against the page's mediaBase (or /videos/edits/ on localhost). lines are [seconds, text] from Whisper on the final cut.",
+  "_note": "Shared answer library. A company page lists the ids it shows. video/poster are file names resolved against the page's mediaBase (or /videos/edits/ on localhost). lines are [seconds, text] from Whisper on the final cut. ?v= is a content hash so Cloudflare's cache never serves a stale cut.",
   "questions": {
     "startup-em": {
       "title": "How do you thrive in a startup environment? How do you need to adapt as an EM to be effective at a startup?",
       "short": "Thriving at a startup",
       "duration": 104,
-      "video": "startup-em.mp4",
-      "poster": "startup-em.jpg",
+      "video": "startup-em.mp4?v=722b183d",
+      "poster": "startup-em.jpg?v=93704154",
       "transcriptStatus": "transcript",
       "lines": [
         [
@@ -52,8 +52,8 @@
       "title": "Describe your most effective relationship with the team from a technical perspective. What role do you play? What are you accountable for and what is the team accountable for?",
       "short": "My relationship with the team",
       "duration": 138,
-      "video": "team-relationship.mp4",
-      "poster": "team-relationship.jpg",
+      "video": "team-relationship.mp4?v=11c5f0de",
+      "poster": "team-relationship.jpg?v=a8a8a2e9",
       "transcriptStatus": "transcript",
       "lines": [
         [
@@ -107,8 +107,8 @@
       "title": "What strategies, processes, and methodologies do you operationalize to get your teams to execute most effectively?",
       "short": "How I get teams executing",
       "duration": 163,
-      "video": "execution-systems.mp4",
-      "poster": "execution-systems.jpg",
+      "video": "execution-systems.mp4?v=df804914",
+      "poster": "execution-systems.jpg?v=2a5caff1",
       "transcriptStatus": "transcript",
       "lines": [
         [
@@ -170,8 +170,8 @@
       "title": "Describe your experience with the end-to-end process of hiring and onboarding engineers. Where do you have experience being hands-on throughout this process?",
       "short": "Hiring & onboarding",
       "duration": 135,
-      "video": "hiring-onboarding.mp4",
-      "poster": "hiring-onboarding.jpg",
+      "video": "hiring-onboarding.mp4?v=77dab8fe",
+      "poster": "hiring-onboarding.jpg?v=255ddec0",
       "transcriptStatus": "transcript",
       "lines": [
         [
@@ -225,8 +225,8 @@
       "title": "Describe your philosophy around, and experience with, AI technologies and tools. How have you personally leveraged these tools and what have you built? How have your teams used them?",
       "short": "AI: philosophy & practice",
       "duration": 140,
-      "video": "ai-philosophy.mp4",
-      "poster": "ai-philosophy.jpg",
+      "video": "ai-philosophy.mp4?v=191fcaf2",
+      "poster": "ai-philosophy.jpg?v=b6d71015",
       "transcriptStatus": "transcript",
       "lines": [
         [
@@ -286,8 +286,8 @@
       "kind": "extra",
       "label": "Intro",
       "duration": 26,
-      "video": "intro.mp4",
-      "poster": "intro.jpg",
+      "video": "intro.mp4?v=3472c31f",
+      "poster": "intro.jpg?v=738739cd",
       "transcriptStatus": "transcript",
       "lines": [
         [
@@ -302,8 +302,8 @@
       "kind": "extra",
       "label": "About me",
       "duration": 220,
-      "video": "how-i-got-here.mp4",
-      "poster": "how-i-got-here.jpg",
+      "video": "how-i-got-here.mp4?v=38bb382c",
+      "poster": "how-i-got-here.jpg?v=e326a2ff",
       "transcriptStatus": "transcript",
       "lines": [
         [
@@ -378,8 +378,8 @@
       "kind": "extra",
       "label": "Why Dispatch",
       "duration": 100,
-      "video": "why-dispatch.mp4",
-      "poster": "why-dispatch.jpg",
+      "video": "why-dispatch.mp4?v=70a3f032",
+      "poster": "why-dispatch.jpg?v=abb78a45",
       "transcriptStatus": "transcript",
       "lines": [
         [
