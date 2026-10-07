@@ -101,8 +101,8 @@
   function bind(m) {
     const on = (ev, fn) => m.on ? m.on(ev, fn) : m.addEventListener(ev, fn);
     on("timeupdate", () => { const now = m.currentTime; if (!m.paused && now > lastTick && now - lastTick < 2) vstate(cur).watchedSec += now - lastTick; lastTick = now; update(); });
-    on("play", () => { const v = vstate(cur); v.plays++; setIcons(); track("video_played", { question: Q[cur].id, index: cur + 1, from: Math.round(m.currentTime), placeholder: !Q[cur].video }, `${label(cur)} "${Q[cur].short}": played${m.currentTime > 1 ? ` from ${fmt(m.currentTime)}` : ""}`); });
-    on("pause", () => { setIcons(); if (m.currentTime < (m.duration || Q[cur].duration)) track("video_paused", { question: Q[cur].id, at: Math.round(m.currentTime) }, `${label(cur)}: paused at ${fmt(m.currentTime)}`); });
+    on("play", () => { const v = vstate(cur); v.plays++; setIcons(); wake(); track("video_played", { question: Q[cur].id, index: cur + 1, from: Math.round(m.currentTime), placeholder: !Q[cur].video }, `${label(cur)} "${Q[cur].short}": played${m.currentTime > 1 ? ` from ${fmt(m.currentTime)}` : ""}`); });
+    on("pause", () => { setIcons(); stage.classList.remove("idle"); clearTimeout(idleTimer); if (m.currentTime < (m.duration || Q[cur].duration)) track("video_paused", { question: Q[cur].id, at: Math.round(m.currentTime) }, `${label(cur)}: paused at ${fmt(m.currentTime)}`); });
     on("ended", () => {
       track("video_completed", { question: Q[cur].id, index: cur + 1 }, `${label(cur)}: watched to the end`); renderRail(); setIcons();
       if (cur < Q.length - 1) setTimeout(() => select(cur + 1, true), 1200);
@@ -130,6 +130,40 @@
     if (autoplay) media().play();
   }
   const toggle = () => media().paused ? media().play() : media().pause();
+
+  /* Overlays hide while playing; any movement or tap brings them back */
+  const stage = $("stage");
+  let idleTimer;
+  function wake() {
+    stage.classList.remove("idle"); clearTimeout(idleTimer);
+    if (Q.length && !media().paused) idleTimer = setTimeout(() => stage.classList.add("idle"), 2500);
+  }
+  ["mousemove", "touchstart", "keydown"].forEach(ev => stage.addEventListener(ev, wake, { passive: true }));
+  stage.addEventListener("click", e => {
+    if (e.target.closest("button, .bar")) return;
+    if (stage.classList.contains("idle")) return wake();   // first tap on a hidden overlay just reveals it
+    toggle();
+  });
+
+  /* Full screen: the whole player where supported, the native iOS player otherwise */
+  $("fsBtn").onclick = () => {
+    if (document.fullscreenElement || document.webkitFullscreenElement) return (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    track("fullscreen_entered", { question: Q[cur].id }, `${label(cur)}: went full screen`);
+    if (stage.requestFullscreen) stage.requestFullscreen();
+    else if (stage.webkitRequestFullscreen) stage.webkitRequestFullscreen();
+    else if (Q[cur].video && video.webkitEnterFullscreen) video.webkitEnterFullscreen();
+  };
+
+  /* Theater view */
+  function theater(on) {
+    $("player").classList.toggle("theater", on); document.body.classList.toggle("theater", on);
+    $("theaterBtn").setAttribute("aria-label", on ? "Exit theater view" : "Theater view");
+    if (on) track("theater_opened", { question: Q[cur].id }, `${label(cur)}: opened theater view`);
+    wake();
+  }
+  $("theaterBtn").onclick = () => theater(!$("player").classList.contains("theater"));
+  $("theaterClose").onclick = () => theater(false);
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && $("player").classList.contains("theater")) theater(false); });
   $("bigPlay").onclick = toggle; $("play").onclick = toggle;
   $("prev").onclick = () => { track("question_skipped", { direction: "back", to: cur }, `Skipped back to ${label(cur - 1)}`); select(cur - 1, !media().paused); };
   $("next").onclick = () => { track("question_skipped", { direction: "ahead", to: cur + 2 }, `Skipped ahead to ${label(cur + 1)}`); select(cur + 1, !media().paused); };

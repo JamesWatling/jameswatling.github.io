@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="/apply/assets/portal.css?v=f147f7b6">
+    <link rel="stylesheet" href="/apply/assets/portal.css?v=08c20c94">
 
     <script type="application/json" id="portal-config">
     {
@@ -78,7 +78,8 @@
         <button id="next" aria-label="Next question"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 3 5 5-5 5"/></svg></button>
       </div>
     </div>
-    <div class="player">
+    <div class="player" id="player">
+      <button class="theater-close" id="theaterClose" aria-label="Close theater view">✕</button>
       <div class="stage" id="stage">
         <span class="counter" id="counter">Q1 / 5</span>
         <span class="ph">Video coming soon</span>
@@ -90,6 +91,8 @@
             <button class="play" id="play" aria-label="Play"><svg viewBox="0 0 16 16" fill="currentColor" id="playIcon"><path d="M4 2l10 6-10 6z"/></svg></button>
             <div class="bar" id="bar"><i id="fill"></i></div>
             <span class="time" id="time">0:00 / 0:00</span>
+            <button class="ctrl-btn ctrl-theater" id="theaterBtn" aria-label="Theater view" title="Theater view"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="3" width="13" height="10" rx="1.5"/><path d="M10 3v10"/></svg></button>
+            <button class="ctrl-btn" id="fsBtn" aria-label="Full screen" title="Full screen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/></svg></button>
           </div>
         </div>
       </div>
@@ -329,6 +332,6 @@
 </div>
 <footer><div class="wrap">Made for Dispatch by James Watling · jameswatling.com</div></footer>
 </main>
-<script src="/apply/assets/portal.js?v=153958af" defer></script>
+<script src="/apply/assets/portal.js?v=a71010df" defer></script>
 </body>
 </html>
