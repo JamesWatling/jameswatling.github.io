@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="/apply/assets/portal.css?v=657b8ae2">
+    <link rel="stylesheet" href="/apply/assets/portal.css?v=d89d97d2">
 
     <script type="application/json" id="portal-config">
     {
@@ -48,7 +48,7 @@
         <div>
           <div class="label" style="color:rgba(248,247,255,.7)">Prepared for the Dispatch team · October 2026</div>
           <h1 style="margin-top:14px">A player-coach for the team building <em>wealth's data layer</em>.</h1>
-          <p class="lede">Every advisory firm runs CRMs, custodians and planning tools that were never built to talk to each other. Opening accounts in minutes and cutting NIGOs is as much a delivery problem as a product one, and delivery is what I do best. Start with the 30-second intro.</p>
+          <p class="lede">Advisory firms run CRMs, custodians and planning tools that were never built to talk to each other. Making that data flow reliably is a delivery problem as much as a product one, and delivery is where I do my best work.</p>
         </div>
         <div class="mini-stage intro-video" data-inline-video="intro.mp4" data-name="Intro video" role="button" tabindex="0" aria-label="Play a 30-second intro from James">
           <img data-inline-poster="intro.jpg" alt="">
@@ -61,23 +61,21 @@
         <a class="btn ghost" href="#fit">How I fit the role</a>
       </div>
       <div class="stats">
-        <div class="stat"><b>20+</b><span>engineers hired across Spring Health, Wonderschool and EarlyDay, with 100% retention on my Spring Health teams</span></div>
-        <div class="stat"><b>0 → exit</b><span>Founding CTO at EarlyDay, from first commit to acquisition by Wonderschool</span></div>
-        <div class="stat"><b>15,000</b><span>telehealth sessions a day on the Spring Health and Alma platforms my teams own</span></div>
+        <div class="stat"><b>20+</b><span>engineers hired, with 100% retention on my Spring Health teams</span></div>
+        <div class="stat"><b>0 → exit</b><span>Founding CTO at EarlyDay, through acquisition by Wonderschool</span></div>
+        <div class="stat"><b>15,000</b><span>telehealth sessions a day on platforms my teams own</span></div>
       </div>
     </div>
     <div class="strip"></div>
   </header>
 
-  <div class="how" aria-label="How this page works">
-    <div><span class="label">Watch</span><p>Your five questions, answered on video, plus how I got here and why Dispatch. Click any transcript line to jump, or open theater view.</p></div>
-    <div><span class="label">Read</span><p>Prefer text? Every answer is <a href="#written">written out below the videos</a>.</p></div>
-    <div><span class="label">Check</span><p>How my experience maps to the role, what I've built this year, and references you can verify.</p></div>
-  </div>
+  <nav class="secnav" aria-label="Sections">
+    <a href="#answers">Videos</a><a href="#written">Written answers</a><a href="#fit">Role fit</a><a href="#builds">Builds</a><a href="#proof">References</a><a href="#plan">How I'd start</a>
+  </nav>
 
   <section id="answers" data-sec="Answers">
     <div class="sec-head">
-      <div><span class="label">Your questions</span><h2>Five answers, on video</h2><p>Plus how I got here, and why Dispatch.</p></div>
+      <div><span class="label">Your questions</span><h2>Five answers, on video</h2><p>Pick any question below. Each video has a transcript you can click to jump.</p></div>
       <div class="nav-btns">
         <span class="pos" id="pos">1 of 7</span>
         <button id="prev" aria-label="Previous question"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3 5 8l5 5"/></svg></button>
@@ -107,7 +105,7 @@
         <div class="t-body" id="tbody"></div>
       </aside>
     </div>
-    <div class="rail" id="rail" role="list"></div>
+    <div class="rail" id="rail" role="list" aria-label="Choose a video"></div>
   </section>
 
   <section id="written" data-sec="Written answers">
@@ -146,8 +144,8 @@
     </div>
     <div class="fit2">
       <div class="fit2-head"><span>You need</span><span>I've done</span><span>At Dispatch, I'd</span></div>
-      <div class="fit2-row"><div class="need">Own execution end to end</div><div class="done"><span class="m">I've done</span>Spring Health: moved telehealth from a legacy vendor to a custom Zoom platform with no dropped sessions. Failures fell from 15% to under 5%, under budget.</div><div class="do"><span class="m">At Dispatch, I'd</span>Take ownership of the core workflow team's delivery from week one, with a weekly outcome review shared with Product.</div><div class="go"><button data-goto-q="team-relationship">▶ Q2</button></div></div>
       <div class="fit2-row"><div class="need">Connective tissue with Product</div><div class="done"><span class="m">I've done</span>Made the business case for that migration to leadership. My teams agree sprint outcomes with Product and write designs, not just tickets.</div><div class="do"><span class="m">At Dispatch, I'd</span>Sequence the roadmap with Rafi, and tie each project to a customer metric: time to open, NIGO rate, sync failures.</div><div class="go"><button data-goto-q="startup-em">▶ Q1</button></div></div>
+      <div class="fit2-row"><div class="need">Own execution end to end</div><div class="done"><span class="m">I've done</span>Spring Health: moved telehealth from a legacy vendor to a custom Zoom platform with no dropped sessions. Failures fell from 15% to under 5%, under budget.</div><div class="do"><span class="m">At Dispatch, I'd</span>Take ownership of the core workflow team's delivery from week one, with a weekly outcome review shared with Product.</div><div class="go"><button data-goto-q="team-relationship">▶ Q2</button></div></div>
       <div class="fit2-row"><div class="need">Build the delivery system</div><div class="done"><span class="m">I've done</span>Wonderschool: Datadog, deploy on merge with GitHub Actions, feature flags and coverage gates. Support tickets fell 85%.</div><div class="do"><span class="m">At Dispatch, I'd</span>Review CI, flags and the test pyramid early, and cut cycle time without adding ceremony.</div><div class="go"><button data-goto-q="execution-systems">▶ Q3</button></div></div>
       <div class="fit2-row"><div class="need">Hire and scale to 20–30</div><div class="done"><span class="m">I've done</span>Dozens hired. Rebuilt loops around system design and pair programming. 100% retention at Spring Health, and three other managers now use my model. Today: 15 engineers across 3 teams.</div><div class="do"><span class="m">At Dispatch, I'd</span>Build the headcount plan, job descriptions and a calibrated loop with the VP of Talent. New hires ship on day one.</div><div class="go"><button data-goto-q="hiring-onboarding">▶ Q4</button></div></div>
       <div class="fit2-row"><div class="need">On-call and incidents</div><div class="done"><span class="m">I've done</span>My teams own about 15,000 sessions a day plus clinical notes and HIPAA compliance, with on-call and post-mortems.</div><div class="do"><span class="m">At Dispatch, I'd</span>Set SLOs on account opening and sync paths, a clear rotation, and post-mortems whose follow-ups get done.</div><div class="go"></div></div>
@@ -214,7 +212,7 @@
 
   <section id="proof" data-sec="Proof">
     <div class="sec-head">
-      <div><span class="label">Proof</span><h2>Don't take my word for it</h2>
+      <div><span class="label">References</span><h2>What others say</h2>
       <p>A video reference from a CTO I worked for, and two published case studies on how I hire and build teams.</p></div>
     </div>
     <div class="proof">
@@ -299,6 +297,6 @@
 </div>
 <footer><div class="wrap">Made for Dispatch by James Watling · jameswatling.com</div></footer>
 </main>
-<script src="/apply/assets/portal.js?v=f8118865" defer></script>
+<script src="/apply/assets/portal.js?v=2e08d491" defer></script>
 </body>
 </html>

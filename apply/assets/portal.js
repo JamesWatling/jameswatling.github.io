@@ -57,13 +57,16 @@
 
   function renderRail() {
     $("rail").innerHTML = Q.map((q, i) => {
-      const v = S.videos[q.id] || { maxPct: 0 };
-      return `<button class="q" role="listitem" data-i="${i}" aria-current="${i === cur}">
-        <span class="n"><span>${esc(label(i))} · ${fmt(q.duration)}</span>${v.maxPct >= 95 ? '<span class="w">✓ watched</span>' : ""}</span>
-        <span class="tt">${esc(q.short)}</span><span class="prog"><i style="width:${v.maxPct}%"></i></span></button>`;
+      const v = S.videos[q.id] || { maxPct: 0 }, done = v.maxPct >= 95;
+      return `<button class="q${q.kind === "extra" ? " extra" : ""}" role="listitem" data-i="${i}" aria-current="${i === cur}">
+        <span class="qplay" aria-hidden="true">${done ? "✓" : '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2l10 6-10 6z"/></svg>'}</span>
+        <span class="qbody"><span class="n"><span>${esc(label(i))}</span><span>${fmt(q.duration)}</span></span>
+        <span class="tt">${esc(q.kind === "extra" ? q.short : q.title)}</span>
+        <span class="prog"><i style="width:${v.maxPct}%"></i></span></span></button>`;
     }).join("");
     $("rail").querySelectorAll(".q").forEach(b => b.onclick = () => {
       const i = +b.dataset.i; track("question_selected", { question: Q[i].id, index: i + 1 }, `Selected ${label(i)}`); select(i, true);
+      if ($("stage").getBoundingClientRect().top < 0) $("stage").scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
   function renderTranscript() {
@@ -122,7 +125,7 @@
       video.removeAttribute("src"); video.remove();
       clock = makeClock(q.duration); bind(clock);
     }
-    $("qtitle").textContent = q.title;
+    $("qtitle").textContent = q.short;
     $("counter").textContent = label(i);
     $("pos").textContent = `${i + 1} of ${Q.length}`;
     $("prev").disabled = i === 0; $("next").disabled = i === Q.length - 1;
@@ -193,13 +196,22 @@
     track(el.dataset.track, { label, href: el.getAttribute("href") || null }, `Opened ${label}`);
   });
   document.querySelectorAll("[data-goto-q]").forEach(b => b.addEventListener("click", () => {
-    track("question_link_clicked", { question: b.dataset.gotoQ, from: b.closest("[data-sec]")?.dataset.sec }, `Jumped to ${b.dataset.gotoQ} from ${b.closest("[data-sec]")?.dataset.sec}`);
+    const qi = Q.findIndex(q => q.id === b.dataset.gotoQ), from = b.closest("[data-sec]")?.dataset.sec;
+    track("question_link_clicked", { question: b.dataset.gotoQ, from }, `Jumped to ${qi >= 0 ? label(qi) : b.dataset.gotoQ} from ${from}`);
     goQuestion(b.dataset.gotoQ);
   }));
   document.querySelectorAll("details[data-answer]").forEach(d => d.addEventListener("toggle", () => {
     if (d.open) track("written_answer_opened", { question: d.dataset.answer }, `Read the written answer to ${d.querySelector(".qn").textContent}`);
   }));
   document.querySelectorAll("[data-goto-sec]").forEach(b => b.addEventListener("click", () => $(b.dataset.gotoSec).scrollIntoView({ behavior: "smooth" })));
+
+  /* ── Section nav: mark the section in view ── */
+  const navLinks = [...document.querySelectorAll(".secnav a")];
+  const navIo = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
+  }), { rootMargin: "-40% 0px -55% 0px" });
+  navLinks.forEach(a => { const t = document.querySelector(a.getAttribute("href")); if (t) navIo.observe(t);
+    a.addEventListener("click", () => track("nav_clicked", { section: a.textContent })); });
 
   /* ── Inline reference videos (e.g. a recorded reference) ── */
   document.querySelectorAll("[data-inline-poster]").forEach(img => { img.src = mediaUrl(img.dataset.inlinePoster); });
@@ -211,8 +223,12 @@
       box.classList.add("playing"); box.appendChild(v);
       const st = S.videos[name] = { title: name, plays: 0, maxPct: 0, watchedSec: 0, milestones: [] };
       v.addEventListener("play", () => { st.plays++; track("inline_video_played", { video: name }, `Played ${name}`); });
+      let last = 0;
       v.addEventListener("timeupdate", () => {
-        const pct = Math.round((v.currentTime / (v.duration || 1)) * 100); if (pct > st.maxPct) st.maxPct = pct;
+        if (!v.duration) return;
+        if (!v.paused && v.currentTime > last && v.currentTime - last < 2) st.watchedSec += v.currentTime - last;
+        last = v.currentTime;
+        const pct = Math.round((v.currentTime / v.duration) * 100); if (pct > st.maxPct) st.maxPct = pct;
         [25, 50, 75, 100].forEach(ms => { if (pct >= ms && !st.milestones.includes(ms)) { st.milestones.push(ms); track("video_progress", { video: name, percent: ms }); } });
       });
     }, { once: false });
